@@ -2,3 +2,12 @@
 .ustPane{
 	-fx-background-color: #3498db;
 }
+/* MenuButton içindeki ok alanı */
+.menu-button .arrow-button .arrow {
+    -fx-padding: 0.4em 0.4em; /* Bu değerleri artırırsan ok büyür (örn: 0.6em) */
+}
+
+/* İstersen rengini de buradan değiştirebilirsin */
+.menu-button {
+    -fx-background-color:#3498db ; 
+}
