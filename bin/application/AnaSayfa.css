@@ -1,6 +1,8 @@
 
 .ustPane{
-	-fx-background-color: #3498db;
+	-fx-background-color: linear-gradient(to right, #C19A6B, #E6C288); /* Hafif degrade geçişli */
+-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+	-fx-background-radius: 20;
 }
 /* MenuButton içindeki ok alanı */
 .menu-button .arrow-button .arrow {
@@ -10,4 +12,21 @@
 /* İstersen rengini de buradan değiştirebilirsin */
 .menu-button {
     -fx-background-color:#3498db ; 
+}
+
+.arkaPlan {
+    -fx-background-color: rgba(255, 255, 255, 0.80);
+-fx-background-radius: 20;
+-fx-border-color: rgba(255, 255, 255, 0.60);
+-fx-border-radius: 20;
+-fx-border-width: 1.5;
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5); 
+}
+.hizmet-label{
+-fx-background-color: #FAF0E6;
+-fx-background-radius: 15; /* Köşeleri hafif yuvarlar, modern durur */
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5); /* Hafif gölge ekler, havada duruyor gibi görünür */
+-fx-text-fill: #8B5A2B;
+-fx-font-weight: bold; /* Yazıyı biraz daha tok gösterir */
+-fx-font-size: 18px;   /* Okunabilirliği artırır */
 }
