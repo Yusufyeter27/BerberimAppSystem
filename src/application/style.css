@@ -1,0 +1,116 @@
+/* Genel Arka Plan - Mat Gri */
+
+
+/* Ortadaki Beyaz Panel (Login Formunun olduğu alan) */
+/* Bunu Scene Builder'da formun olduğu ana panele (AnchorPane veya Pane) vereceğiz */
+.login-card {
+    -fx-background-color: rgba(255, 255, 255, 0.80);
+-fx-background-radius: 20;
+-fx-border-color: rgba(255, 255, 255, 0.60);
+-fx-border-radius: 20;
+-fx-border-width: 1.5;
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5); 
+}
+/* Rengi koyu lacivert-gri yapıyoruz, butonlarla uyumlu */
+.berberim{-fx-text-fill: #2C3E50;
+/* Modern, tırnaksız bir font ailesi seçiyoruz */
+-fx-font-family: 'Segoe UI', Roboto, sans-serif;
+/* Yazıyı kalınlaştırıyoruz */
+-fx-font-weight: bold;
+/* Yazı boyutunu ayarlıyoruz (isteğe göre değiştir) */
+-fx-font-size: 36px;
+/* Cam üzerinde daha iyi durması için çok hafif bir gölge */
+-fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.3), 2, 0.0, 0, 1);
+
+}
+
+/* --- DIŞ KUTU (Havuz) --- */
+.toggle-container {
+    /* Görseldeki gibi koyu gri zemin (Arka plandan biraz daha koyu veya açık) */
+    -fx-background-color: #3b3b3b; 
+    /* Tam oval olması için yüksek radius */
+    -fx-background-radius: 50; 
+    /* Hafif bir iç gölge derinlik katar */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 2);
+}
+
+/* --- BUTONLARIN GENEL HALİ (Seçili Olmayanlar) --- */
+.toggle-btn {
+    -fx-background-color: transparent; /* Arkadaki gri havuz görünsün */
+    -fx-text-fill: #95a5a6; /* Sönük gri yazı (BERBER yazısı gibi) */
+    -fx-background-radius: 50; /* Butonlar da tam oval */
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    /* Geçiş animasyonu için (JavaFX CSS'te sınırlıdır ama deneyebiliriz) */
+}
+
+/* --- SEÇİLİ OLAN BUTON (MÜŞTERİ gibi) --- */
+.toggle-btn:selected {
+    -fx-background-color: #3498db; /* O tatlı parlak mavi */
+    -fx-text-fill: white; /* Yazı beyaz */
+    /* Seçili olanın hafif parlaması */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 3, 0, 0, 1);
+}
+
+/* Üzerine gelince (Hover) - Seçili olmayanın yazısı parlasın */
+.toggle-btn:hover {
+    -fx-text-fill: white;
+}
+
+
+/* Kullanıcı Adı ve Şifre Alanları */
+.text-field {
+    -fx-background-color: #F0F0F0;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 8;
+}
+
+.text-field:focused {
+    -fx-border-color: #4A90E2; /* Tıklanınca mavi çerçeve */
+}
+
+/* "Giriş" Butonu (Yeşil) */
+.login-btn {
+    -fx-background-color: #2980b9; /* Tok bir mavi */
+-fx-text-fill: white;
+-fx-background-radius: 20;
+-fx-cursor: hand;
+-fx-font-weight: bold;
+}
+
+.login-btn:hover {
+    -fx-background-color: #3498db; 
+    -fx-effect: dropshadow(three-pass-box, rgba(52, 152, 219, 0.4), 10, 0, 0, 4);
+}
+/* Tıklayınca (Pressed) - Koyulaşır ve gömülür */
+.login-btn:pressed {
+    -fx-background-color: #1f618d;
+    -fx-translate-y: 1; /* Buton 1 piksel aşağı kayar (basma hissi) */
+}
+
+/* "Kayıt Ol" Butonu (Turuncu/Gri) */
+.register-btn {
+    -fx-background-color: transparent; /* İçi boş */
+-fx-border-color: #2980b9; /* Kenarları mavi */
+-fx-border-width: 1.5;
+-fx-border-radius: 20;
+-fx-text-fill: #2980b9; /* Yazısı mavi */
+-fx-cursor: hand;
+-fx-font-weight: bold;
+}
+
+/* Üzerine gelince (Hover) - İçi hafif mavi dolar */
+.register-btn:hover {
+    -fx-background-color: rgba(41, 128, 185, 0.1); /* Çok hafif şeffaf mavi */
+    -fx-border-color: #3498db;
+    -fx-text-fill: #3498db;
+}
+
+/* Tıklayınca (Pressed) - Mavi biraz daha belirginleşir */
+.register-btn:pressed {
+    -fx-background-color: rgba(41, 128, 185, 0.3);
+    -fx-translate-y: 1;
+}
