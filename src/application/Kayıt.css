@@ -1,0 +1,52 @@
+.arkaPlan{
+	  -fx-background-color: rgba(255, 255, 255, 0.80);
+-fx-background-radius: 20;
+-fx-border-color: rgba(255, 255, 255, 0.60);
+-fx-border-radius: 20;
+-fx-border-width: 1.5;
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);
+}
+.berberim{-fx-text-fill: #2C3E50;
+/* Modern, tırnaksız bir font ailesi seçiyoruz */
+-fx-font-family: 'Segoe UI', Roboto, sans-serif;
+/* Yazıyı kalınlaştırıyoruz */
+-fx-font-weight: bold;
+/* Yazı boyutunu ayarlıyoruz (isteğe göre değiştir) */
+-fx-font-size: 36px;
+/* Cam üzerinde daha iyi durması için çok hafif bir gölge */
+-fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.3), 2, 0.0, 0, 1);
+
+}
+.text-field {
+    -fx-background-color: #F0F0F0;
+    -fx-border-color: #CCCCCC;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 8;
+}
+
+.text-field:focused {
+    -fx-border-color: #4A90E2; /* Tıklanınca mavi çerçeve */
+}
+.register-btn {
+    -fx-background-color: transparent; /* İçi boş */
+-fx-border-color: #2980b9; /* Kenarları mavi */
+-fx-border-width: 1.5;
+-fx-border-radius: 20;
+-fx-text-fill: #2980b9; /* Yazısı mavi */
+-fx-cursor: hand;
+-fx-font-weight: bold;
+}
+
+/* Üzerine gelince (Hover) - İçi hafif mavi dolar */
+.register-btn:hover {
+    -fx-background-color: rgba(41, 128, 185, 0.1); /* Çok hafif şeffaf mavi */
+    -fx-border-color: #3498db;
+    -fx-text-fill: #3498db;
+}
+
+/* Tıklayınca (Pressed) - Mavi biraz daha belirginleşir */
+.register-btn:pressed {
+    -fx-background-color: rgba(41, 128, 185, 0.3);
+    -fx-translate-y: 1;
+}
