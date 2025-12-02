@@ -53,7 +53,7 @@
                   <TextField fx:id="textField" layoutX="63.0" layoutY="64.0" prefHeight="34.0" prefWidth="210.0" promptText="Kullanıcı adı" />
                   <PasswordField fx:id="passwordField" layoutX="63.0" layoutY="125.0" prefHeight="34.0" prefWidth="210.0" promptText="Şifre" styleClass="text-field" />
                   <Button layoutX="66.0" layoutY="173.0" mnemonicParsing="false" onAction="#girisYapClick" prefHeight="24.0" prefWidth="58.0" styleClass="login-btn" text="Giriş" />
-                  <Button layoutX="139.0" layoutY="173.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="73.0" styleClass="register-btn" text="Kayıt Ol" />
+                  <Button layoutX="139.0" layoutY="173.0" mnemonicParsing="false" onAction="#kayıtOlClick" prefHeight="24.0" prefWidth="73.0" styleClass="register-btn" text="Kayıt Ol" />
                   <Text layoutX="63.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kullanıcı Adı">
                      <font>
                         <Font size="15.0" />

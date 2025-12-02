@@ -56,6 +56,32 @@ public class LoginController {
     }
 
     @FXML
+    void kayıtOlClick(ActionEvent event) {
+    	try {
+            // 1. Yeni FXML dosyasını yükle
+            // Dosya yoluna dikkat: /fxml/AnaSayfa.fxml (Senin klasör yapına göre)
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/kayıt.fxml"));
+            
+            // 2. Şu anki Sahneyi (Stage) al
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            
+            // 3. Yeni sahneyi oluştur ve pencereye koy
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            
+            System.out.println("Kayıt ol sayfasına yönlendirildi.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("HATA: Sayfa yüklenemedi! Dosya yolunu kontrol et.");
+        }
+
+    }
+
+    
+
+    @FXML
     void initialize() {
         assert loginGroup != null : "fx:id=\"loginGroup\" was not injected: check your FXML file 'Login.fxml'.";
 
