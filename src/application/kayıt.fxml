@@ -30,7 +30,7 @@
                   <Font size="8.0" />
                </font>
             </Text>
-            <Button layoutX="103.0" layoutY="229.0" mnemonicParsing="false" onAction="#kayıtOlClick2" styleClass="register-btn" text="Kayıt ol" AnchorPane.bottomAnchor="14.0" />
+            <Button fx:id="kayitolbutton" layoutX="103.0" layoutY="229.0" mnemonicParsing="false" onAction="#kayıtOlClick2" styleClass="register-btn" text="Kayıt ol" AnchorPane.bottomAnchor="14.0" />
             <ImageView fitHeight="50.0" fitWidth="54.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../../PROJE%20RESİMLERİ/ikon3-removebg-preview.png" />
