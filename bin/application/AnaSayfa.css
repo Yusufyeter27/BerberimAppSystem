@@ -9,6 +9,14 @@
     -fx-padding: 0.4em 0.4em; /* Bu değerleri artırırsan ok büyür (örn: 0.6em) */
 }
 
+.arkaPlan{
+   -fx-background-color: #f2f2f2;
+-fx-background-radius: 20;
+-fx-border-color: rgba(255, 255, 255, 0.60);
+-fx-border-radius: 20;
+-fx-border-width: 1.5;
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);}
+
 /* İstersen rengini de buradan değiştirebilirsin */
 .menu-button {
     -fx-background-color:#3498db ; 
@@ -29,4 +37,107 @@
 -fx-text-fill: #8B5A2B;
 -fx-font-weight: bold; /* Yazıyı biraz daha tok gösterir */
 -fx-font-size: 18px;   /* Okunabilirliği artırır */
+}
+/* Genel Arkaplan (VBox için verilebilir) */
+.list-container {
+    -fx-background-color: #f9f9f9; /* Çok açık gri, göz yormaz */
+    -fx-padding: 20;
+    -fx-spacing: 10; /* Satırlar arası boşluk */
+}
+
+/* Her bir Satır (HBox) Tasarımı */
+.service-row {
+    -fx-background-color: #ffffff; /* Satır arka planı beyaz */
+    -fx-background-radius: 8;      /* Köşeleri yuvarlat */
+    -fx-border-color: #e0e0e0;     /* İnce gri çerçeve */
+    -fx-border-radius: 8;
+    -fx-padding: 10 15;            /* İç boşluk (Yukarı-Aşağı: 10, Sağ-Sol: 15) */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 5, 0, 0, 2); /* Hafif gölge */
+    -fx-alignment: CENTER_LEFT;    /* İçerikleri dikeyde ortala */
+}
+
+/* Satır üzerine fare gelince (Hover) */
+.service-row:hover {
+    -fx-background-color: #f0f8ff; /* Çok açık Alice Blue rengi */
+    -fx-border-color: #b0c4de;     /* Çerçeve hafif maviye döner */
+    -fx-cursor: hand;
+}
+
+/* Hizmet İsmi ve Fiyat Yazıları (Label) */
+.service-label {
+    -fx-text-fill: #333333; /* Koyu gri yazı (Siyah yerine daha yumuşak) */
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Fiyatı ayrı bir stil yapmak istersen (Opsiyonel) */
+.price-label {
+    -fx-text-fill: #555555;
+    -fx-font-size: 14px;
+}
+
+/* Randevu Al Butonu */
+.action-btn {
+    -fx-background-color: #4A90E2; /* Modern, canlı bir mavi */
+    -fx-text-fill: white;
+    -fx-background-radius: 20;     /* Oval buton */
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 5 15;             /* Buton içi boşluk */
+    -fx-cursor: hand;
+}
+
+/* Buton üzerine gelince */
+.action-btn:hover {
+    -fx-background-color: #357ABD; /* Mavinin biraz daha koyusu */
+    -fx-scale-x: 1.05;             /* Buton hafifçe büyür */
+    -fx-scale-y: 1.05;
+}
+
+/* Butona tıklandığında */
+.action-btn:pressed {
+    -fx-background-color: #2a629c;
+}/* ScrollPane'in kendisi ve görünür alanı şeffaf olsun */
+.transparent-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-padding: 0; /* Ekstra boşlukları sıfırla */
+}
+
+.transparent-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Kaydırma Çubuğu (Scrollbar) Tasarımı - İsteğe Bağlı */
+/* Çubuğun arka yolu (track) */
+.transparent-scroll .scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* Tutamaç (thumb) - Bunu sitenin konseptine göre renklendirebilirsin */
+.transparent-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: #cccccc; /* Açık gri sade bir renk */
+    -fx-background-radius: 5em;
+}
+
+/* Üzerine gelince tutamaç rengi */
+.transparent-scroll .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #4A90E2; /* Senin mavi buton renginle uyumlu olsun */
+}
+/* ScrollPane'in çubuklarını tamamen gizle ama kaydırma çalışsın */
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.scroll-pane {
+   -fx-background-color: transparent;
+}
+
+/* Dikey ve Yatay çubukları gizle */
+.scroll-pane .scroll-bar:vertical,
+.scroll-pane .scroll-bar:horizontal {
+    -fx-opacity: 0; /* Görünmez yap */
+    -fx-padding:-10; /* Alan kaplamasını engelle */
 }
