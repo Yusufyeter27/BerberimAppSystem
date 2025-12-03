@@ -216,7 +216,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="Saç Boyama" prefHeight="25.0" prefWidth="279.0" text="Saç Boyama              800-1000 TL">
+                              <Label fx:id="sac" prefHeight="25.0" prefWidth="279.0" text="Saç Boyama              800-1000 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -225,7 +225,7 @@
                                     <String fx:value="service-row" />
                                  </styleClass>
                               </Label>
-                              <Button mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="125.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button accessibleText="Saç Boyama" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="125.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />
@@ -234,7 +234,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="Saç Tıraşı" prefHeight="25.0" prefWidth="279.0" text="Sakal  Tıraşı                     400 TL">
+                              <Label prefHeight="25.0" prefWidth="279.0" text="Sakal  Tıraşı                     400 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -243,7 +243,7 @@
                                     <String fx:value="service-label" />
                                  </styleClass>
                               </Label>
-                              <Button mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="128.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button accessibleText="Sakal Tıraşı" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="128.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />
@@ -252,7 +252,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="Sakal Boyama" prefHeight="25.0" prefWidth="279.0" text="Sakal Boyama            700-1000 TL">
+                              <Label prefHeight="25.0" prefWidth="279.0" text="Sakal Boyama            700-1000 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -261,7 +261,7 @@
                                     <String fx:value="service-row" />
                                  </styleClass>
                               </Label>
-                              <Button mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="124.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button accessibleText="Sakal Boyama" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="124.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />
@@ -270,7 +270,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="Saç-Sakal Kesimi" prefHeight="25.0" prefWidth="279.0" text="Saç-Sakal Kesimi               1250 TL">
+                              <Label prefHeight="25.0" prefWidth="279.0" text="Saç-Sakal Kesimi               1250 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -279,7 +279,7 @@
                                     <String fx:value="service-row" />
                                  </styleClass>
                               </Label>
-                              <Button mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="132.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button accessibleText="Saç-Sakal Kesimi" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="132.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />
@@ -288,7 +288,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="Saç-Sakal Boyama" prefHeight="25.0" prefWidth="279.0" text="Saç-Sakal Boyama           2000 TL">
+                              <Label prefHeight="25.0" prefWidth="279.0" text="Saç-Sakal Boyama           2000 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -297,7 +297,7 @@
                                     <String fx:value="service-row" />
                                  </styleClass>
                               </Label>
-                              <Button mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="133.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button accessibleText="Saç-Sakal Boyama" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="133.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />
@@ -306,7 +306,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="Çocuk Tıraşı" prefHeight="25.0" prefWidth="279.0" text="Çocuk Tıraşı                   700 TL">
+                              <Label prefHeight="25.0" prefWidth="279.0" text="Çocuk Tıraşı                   700 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -315,7 +315,7 @@
                                     <String fx:value="service-label" />
                                  </styleClass>
                               </Label>
-                              <Button mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="130.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button accessibleText="Çocuk Tıraşı" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="130.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />
@@ -324,7 +324,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="Fön-Ağda-Kaş" prefHeight="25.0" prefWidth="279.0" text="Fön-Ağda-Kaş                 500 TL">
+                              <Label prefHeight="25.0" prefWidth="279.0" text="Fön-Ağda-Kaş                 500 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -333,7 +333,7 @@
                                     <String fx:value="service-row" />
                                  </styleClass>
                               </Label>
-                              <Button mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="119.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button accessibleText="Fön-Ağda-Kaş" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="119.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />
@@ -342,7 +342,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="Keratin Bakım" prefHeight="25.0" prefWidth="279.0" text="Keratin Bakım               2000 TL">
+                              <Label prefHeight="25.0" prefWidth="279.0" text="Keratin Bakım               2000 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -351,7 +351,7 @@
                                     <String fx:value="service-row" />
                                  </styleClass>
                               </Label>
-                              <Button mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="119.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button accessibleText="Keratin Bakım" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="119.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />
@@ -360,7 +360,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="Cilt Bakım" prefHeight="25.0" prefWidth="279.0" text="Cilt Bakım                   1500 TL">
+                              <Label prefHeight="25.0" prefWidth="279.0" text="Cilt Bakım                   1500 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -369,7 +369,7 @@
                                     <String fx:value="service-row" />
                                  </styleClass>
                               </Label>
-                              <Button fx:id="randevuAlTiklandi" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="117.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button fx:id="randevuAlTiklandi" accessibleText="Cilt Bakım" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="117.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />
@@ -378,7 +378,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="Perma" prefHeight="25.0" prefWidth="279.0" text="Perma                          2000 TL">
+                              <Label prefHeight="25.0" prefWidth="279.0" text="Perma                          2000 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -387,7 +387,7 @@
                                     <String fx:value="service-row" />
                                  </styleClass>
                               </Label>
-                              <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="117.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button accessibleText="Perma" mnemonicParsing="false" prefHeight="38.0" prefWidth="117.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />
@@ -396,7 +396,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="VIP Saç Tıraşı" prefHeight="25.0" prefWidth="279.0" text="VIP Saç Tıraşı              1500 TL">
+                              <Label prefHeight="25.0" prefWidth="279.0" text="VIP Saç Tıraşı              1500 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -405,7 +405,7 @@
                                     <String fx:value="service-row" />
                                  </styleClass>
                               </Label>
-                              <Button mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="34.0" prefWidth="117.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button accessibleText="VIP Saç Tıraşı" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="34.0" prefWidth="117.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />
@@ -414,7 +414,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="VIP Sakal Tıraşı" prefHeight="25.0" prefWidth="279.0" text="VIP Sakal Tıraşı               700 TL">
+                              <Label prefHeight="25.0" prefWidth="279.0" text="VIP Sakal Tıraşı               700 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -423,7 +423,7 @@
                                     <String fx:value="service-row" />
                                  </styleClass>
                               </Label>
-                              <Button mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="114.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button accessibleText="VIP Sakal Tıraşı" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="114.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />
@@ -432,7 +432,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="VIP Saç-Sakal Kesimi" prefHeight="25.0" prefWidth="279.0" text="VIP Saç-Sakal Kesimi      2000 TL">
+                              <Label prefHeight="25.0" prefWidth="279.0" text="VIP Saç-Sakal Kesimi      2000 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -441,7 +441,7 @@
                                     <String fx:value="service-row" />
                                  </styleClass>
                               </Label>
-                              <Button mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="112.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button accessibleText="Randevu Al" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="112.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />
@@ -450,7 +450,7 @@
                         </HBox>
                         <HBox prefHeight="15.0" prefWidth="380.0">
                            <children>
-                              <Label accessibleText="Saç Yıkama" prefHeight="25.0" prefWidth="279.0" text="Saç Yıkama                    200 TL">
+                              <Label prefHeight="25.0" prefWidth="279.0" text="Saç Yıkama                    200 TL">
                                  <font>
                                     <Font size="17.0" />
                                  </font>
@@ -459,7 +459,7 @@
                                     <String fx:value="service-row" />
                                  </styleClass>
                               </Label>
-                              <Button mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="106.0" styleClass="action-btn" text="Randevu Al" />
+                              <Button accessibleText="Saç Yıkama" mnemonicParsing="false" onAction="#randevuAlTiklandi" prefHeight="38.0" prefWidth="106.0" styleClass="action-btn" text="Randevu Al" />
                            </children>
                            <styleClass>
                               <String fx:value="hizmet-satiri" />

@@ -1,0 +1,166 @@
+.ustPane{
+	-fx-background-color: linear-gradient(to right, #C19A6B, #E6C288); /* Hafif degrade geçişli */
+-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+	-fx-background-radius: 20;
+}
+.menu-button {
+    -fx-padding: 0.2em 0.2em; 
+    -fx-background-color:linear-gradient(to right, #C19A6B, #E6C288)
+}
+.arkaPlan{
+   -fx-background-color: #f2f2f2;
+-fx-background-radius: 20;
+-fx-border-color: rgba(255, 255, 255, 0.60);
+-fx-border-radius: 20;
+-fx-border-width: 1.5;
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);}
+
+.circle-label {   
+    -fx-background-color: linear-gradient(to right, #C19A6B, #E6C288);
+    -fx-text-fill: white;
+    -fx-min-width: 25px;
+    -fx-min-height: 25px;
+    -fx-alignment: center;
+    -fx-background-radius: 25; /* min-height kadar olursa yuvarlak olur */
+    -fx-font-size: 18px;
+}
+.fancy-radio {
+    -fx-font-size: 9px;
+    -fx-text-fill: #222;
+}
+
+/* hover efekti */
+.fancy-radio:hover {
+    -fx-text-fill: #1565C0;
+    -fx-cursor: hand;
+}
+
+/* seçili görünüm rengi */
+.fancy-radio:selected .radio {
+    -fx-mark-color: #1565C0;
+}
+/* Tüm saat butonlarının ortak stili */
+.saat-butonu {
+    -fx-background-color: #ffffff;      /* İçi beyaz */
+    -fx-border-color: #C8AD7F;          /* Çerçevesi senin header rengin (Gold) */
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 8;               /* Köşeleri yuvarlatma */
+    -fx-background-radius: 8;
+    -fx-text-fill: #555555;             /* Yazı rengi koyu gri */
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;                   /* Üzerine gelince el işareti */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 3, 0, 0, 2); /* Hafif gölge */
+}
+
+/* Üzerine gelince (Hover) */
+.saat-butonu:hover {
+    -fx-background-color: #C8AD7F;      /* Arkaplan Header rengine döner */
+    -fx-text-fill: white;               /* Yazı beyaz olur */
+    -fx-border-color: #C8AD7F;
+}
+
+/* Tıklanmış/Seçilmiş Hali (Aktif) */
+.saat-butonu:focused {
+    -fx-background-color: #8B7355;      /* Daha koyu bir kahve tonu */
+    -fx-text-fill: white;
+    -fx-border-color: #8B7355;
+}/* DOLU SAATLER İÇİN (Booked/Disabled) */
+.saat-dolu {
+    -fx-background-color: #E0E0E0;      /* Açık Gri Zemin */
+    -fx-border-color: #B0B0B0;          /* Koyu Gri Çerçeve */
+    -fx-text-fill: #808080;             /* Silik Gri Yazı */
+    -fx-opacity: 0.8;                   /* Biraz şeffaflık */
+    -fx-cursor: default;                /* Üzerine gelince el işareti çıkmasın */
+}/* 1. KUTUNUN DIŞ GÖRÜNÜMÜ */
+.date-picker {
+    -fx-background-color: transparent; /* Arkaplan şeffaf */
+    -fx-border-color: #C8AD7F;         /* Kenarlık Gold rengi */
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 5;              /* Kenarları hafif yuvarlat */
+}
+
+/* İçindeki yazı alanı */
+.date-picker .text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 5 0 0 5;    /* Sadece sol tarafları yuvarlat */
+    -fx-font-family: "Segoe UI";
+}
+
+/* 2. YANDAKİ TAKVİM BUTONU (ICON) */
+.date-picker .arrow-button {
+    -fx-background-color: #C8AD7F;     /* Butonun kendisi Gold olsun */
+    -fx-background-radius: 0 5 5 0;    /* Sadece sağ tarafları yuvarlat */
+    -fx-cursor: hand;
+}
+
+/* Butonun içindeki minik ok simgesi */
+.date-picker .arrow-button .arrow {
+    -fx-background-color: white;       /* Oku beyaz yap */
+}
+
+/* 3. AÇILAN TAKVİM PENCERESİ (POPUP) RENKLERİ */
+
+/* Seçili olan günün rengi (Varsayılan mavidir, bunu değiştiriyoruz) */
+.date-picker-popup .day-cell:selected {
+    -fx-background-color: #C8AD7F; 
+    -fx-text-fill: white;
+}
+
+/* Bugünün tarihi etrafındaki çerçeve */
+.date-picker-popup .today {
+    -fx-border-color: #C8AD7F;
+    -fx-border-width: 1px;
+}
+
+/* Fareyle günlerin üzerine gelince çıkan renk */
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: #E6D6BC; /* Daha açık bir bej tonu */
+}/* --- PERSONEL SEÇİM KUTUSU (HBox) --- */
+.personel-alani {
+    /* İsteğe bağlı: Kutunun etrafına hafif bir çizgi çeker */
+    -fx-border-color: #C8AD7F; 
+    -fx-border-width: 0 0 1px 0; /* Sadece alt tarafa çizgi çeker (Ayıraç gibi) */
+    -fx-padding: 10px;           /* İç boşluk */
+    -fx-spacing: 20px;           /* Elemanlar arası boşluk */
+    -fx-background-color: transparent;
+}
+
+/* --- RADIO BUTTON (SEÇENEK YUVARLAĞI) TASARIMI --- */
+
+/* 1. Genel Yazı ve Yapı */
+.ozel-radio {
+    -fx-text-fill: #555555;      /* Yazı rengi koyu gri */
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 9px;
+    -fx-cursor: hand;            /* Üzerine gelince el işareti */
+}
+
+/* 2. Yuvarlağın Dış Çerçevesi (Seçili Değilken) */
+.ozel-radio .radio {
+    -fx-border-color: #C8AD7F;   /* Çerçeve Gold olsun */
+    -fx-border-width: 2px;
+    -fx-background-color: white; /* İçi beyaz */
+    -fx-background-radius: 15px; /* Tam yuvarlak */
+    -fx-border-radius: 15px;
+    -fx-min-width: 18px;         /* Yuvarlağın boyutu */
+    -fx-min-height: 18px;
+}
+
+/* 3. Seçildiği andaki Dış Çerçeve */
+.ozel-radio:selected .radio {
+    -fx-background-color: #C8AD7F; /* İçi Gold dolsun */
+    -fx-border-color: #C8AD7F;
+}
+
+/* 4. Seçildiği andaki İç Nokta (Dot) */
+.ozel-radio:selected .radio .dot {
+    -fx-background-color: white;   /* Ortadaki nokta beyaz olsun */
+    -fx-background-insets: 0;
+}
+
+/* 5. Üzerine gelince (Hover) efekti */
+.ozel-radio:hover .radio {
+    -fx-border-color: #8B7355;     /* Biraz daha koyu bir kahve tonu */
+}
