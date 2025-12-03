@@ -1,15 +1,16 @@
-package controller;
+package application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
-
-import java.awt.TextField;
 import java.io.IOException;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -24,19 +25,37 @@ public class LoginController {
     private URL location;
 
     @FXML
-    private ToggleGroup loginGroup;
-    @FXML
-    private PasswordField passwordField;
+    private ToggleButton berbergirisi;
 
     @FXML
-    private TextField textField;
+    private Button girisbutton;
+
+    @FXML
+    private TextField giriskullaniciadi;
+
+    @FXML
+    private PasswordField girissifre;
+
+    @FXML
+    private Button kayitolbutton;
+
+    @FXML
+    private ToggleGroup loginGroup;
+
+    @FXML
+    private ToggleButton musterigirisi;
+
+    @FXML
+    void berbergirisiClick(ActionEvent event) {
+
+    }
 
     @FXML
     void girisYapClick(ActionEvent event) {
     	try {
             // 1. Yeni FXML dosyasını yükle
             // Dosya yoluna dikkat: /fxml/AnaSayfa.fxml (Senin klasör yapına göre)
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/AnaSayfa.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/application/AnaSayfa.fxml"));
             
             // 2. Şu anki Sahneyi (Stage) al
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -60,7 +79,7 @@ public class LoginController {
     	try {
             // 1. Yeni FXML dosyasını yükle
             // Dosya yoluna dikkat: /fxml/AnaSayfa.fxml (Senin klasör yapına göre)
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/kayıt.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/application/kayıt.fxml"));
             
             // 2. Şu anki Sahneyi (Stage) al
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -79,13 +98,10 @@ public class LoginController {
 
     }
 
-    
 
     @FXML
-    void initialize() {
-        assert loginGroup != null : "fx:id=\"loginGroup\" was not injected: check your FXML file 'Login.fxml'.";
+    void musterigirisiClick(ActionEvent event) {
 
     }
 
 }
-
