@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="277.0" prefWidth="500.0" stylesheets="@berberrandevu.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BarberRandevuController">
+   <children>
+      <ImageView fitHeight="306.0" fitWidth="500.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../../PROJE%20RESİMLERİ/l.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="200.0" layoutY="67.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" styleClass="arkaPlan" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <AnchorPane layoutX="2.0" layoutY="7.0" prefHeight="40.0" prefWidth="76.0" styleClass="ustPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="324.0" layoutY="8.0" />
+                  <Label layoutX="355.0" layoutY="2.0" prefHeight="15.0" prefWidth="67.0" text="Yusuf Yeter" AnchorPane.rightAnchor="70.0" />
+                  <Label layoutX="346.0" layoutY="21.0" text="HOŞ GELDİNİZ" AnchorPane.rightAnchor="60.0" />
+                  <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="250.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="147.0" AnchorPane.topAnchor="1.0">
+                     <image>
+                        <Image url="@../../../../../Downloads/kişiikonu-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="37.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BERBERİM" wrappingWidth="77.03515625" AnchorPane.leftAnchor="37.0" AnchorPane.topAnchor="9.47021484375">
+                     <font>
+                        <Font name="Apple Chancery" size="13.0" />
+                     </font>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Text>
+                  <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../../../../PROJE%20RESİMLERİ/ikon3-removebg-preview.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </ImageView>
+                  <MenuButton layoutX="382.0" layoutY="2.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="40.0">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Profilim">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../PROJE%20RESİMLERİ/kişiikonu-removebg-preview.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Randevularım">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Downloads/randevuikonu-removebg-preview.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Çıkış Yap">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Downloads/çıkışikonu-removebg-preview.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                     <styleClass>
+                        <String fx:value="arrow-button" />
+                        <String fx:value="arrow" />
+                        <String fx:value="menu-button" />
+                     </styleClass>
+                  </MenuButton>
+               </children>
+            </AnchorPane>
+            <Label layoutX="29.0" layoutY="49.0" styleClass="isim-etiketi" text="Yusuf Yeter" AnchorPane.topAnchor="50.0">
+               <font>
+                  <Font name="Academy Engraved LET Plain:1.0" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="164.0" layoutY="49.0" styleClass="isim-etiketi" text="Emre Turgut" AnchorPane.topAnchor="50.0">
+               <font>
+                  <Font name="Academy Engraved LET Plain:1.0" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="319.0" layoutY="51.0" styleClass="isim-etiketi" text="Kadir Atan" AnchorPane.topAnchor="51.0">
+               <font>
+                  <Font name="Academy Engraved LET Plain:1.0" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="120.0" fitWidth="103.0" layoutX="25.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="31.5" AnchorPane.topAnchor="72.0">
+               <image>
+                  <Image url="@../../../../../../../private/var/folders/w2/q3f6yjp966181_8p4fkslmy00000gn/T/TemporaryItems/com.apple.Photos.NSItemProvider/uuid=D86AF14B-67DB-47AE-9E77-540C34707787&amp;code=001&amp;library=1&amp;type=1&amp;mode=2&amp;loc=false&amp;cap=false.jpeg/IMG_3549.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="129.0" layoutX="153.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="31.5" AnchorPane.topAnchor="72.0">
+               <image>
+                  <Image url="@../../../../PROJE%20RESİMLERİ/emre.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="122.0" fitWidth="140.0" layoutX="289.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="31.5" AnchorPane.topAnchor="72.0">
+               <image>
+                  <Image url="@../../../../PROJE%20RESİMLERİ/kadir.jpeg" />
+               </image>
+            </ImageView>
+            <Button layoutX="24.0" layoutY="195.0" mnemonicParsing="false" onAction="#yusufbutonclick" styleClass="altin-buton" text="Yönlendir" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="30.0" />
+            <Button layoutX="158.0" layoutY="195.0" mnemonicParsing="false" onAction="#emrebutonclick" styleClass="altin-buton" text="Yönlendir" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="193.0" />
+            <Button layoutX="330.0" layoutY="195.0" mnemonicParsing="false" onAction="#kadirbutonclick" prefHeight="31.0" prefWidth="62.0" styleClass="altin-buton" text="Yönlendir" AnchorPane.leftAnchor="325.0" AnchorPane.topAnchor="193.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

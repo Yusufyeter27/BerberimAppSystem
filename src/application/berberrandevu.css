@@ -1,0 +1,56 @@
+.ustPane{
+	-fx-background-color: linear-gradient(to right, #C19A6B, #E6C288); /* Hafif degrade geçişli */
+-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+	-fx-background-radius: 20;
+}.menu-button {
+    -fx-padding: 0.2em 0.2em; 
+    -fx-background-color:linear-gradient(to right, #C19A6B, #E6C288)
+}
+.arkaPlan{
+   -fx-background-color: #f2f2f2;
+-fx-background-radius: 20;
+-fx-border-color: rgba(255, 255, 255, 0.60);
+-fx-border-radius: 20;
+-fx-border-width: 1.5;
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);}
+/* FXML'de butonlara styleClass="altin-buton" eklemelisiniz */
+.altin-buton {
+    /* Üst bardaki renklere benzer, sıcak bir altın-bej gradyanı */
+    -fx-background-color: linear-gradient(to bottom, #d4af7a, #c09e6b);
+    -fx-text-fill: #4a3b32; /* Koyu kahverengi yazı rengi, okunabilirlik için */
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif; /* Temiz bir font */
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20; /* Yuvarlatılmış köşeler */
+    -fx-border-radius: 20;
+    -fx-border-color: transparent;
+    -fx-padding: 8 10; /* İç boşluk */
+    -fx-cursor: hand; /* Üzerine gelince el işareti çıksın */
+    /* Hafif bir gölge ile derinlik katalım */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+    transition: all 0.3s ease; /* Yumuşak geçiş efekti */
+}
+
+/* Fare ile üzerine gelindiğinde (Hover durumu) */
+.altin-buton:hover {
+    /* Rengi biraz daha parlatalım */
+    -fx-background-color: linear-gradient(to bottom, #eacba0, #d4af7a);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 8, 0, 0, 3);
+}
+
+/* Butona tıklandığında (Pressed durumu) */
+.altin-buton:pressed {
+    -fx-background-color: #b08d5b; /* Biraz daha koyu bir ton */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 2, 0, 0, 1);
+}/* FXML'de isim labellarına styleClass="isim-etiketi" eklemelisiniz */
+.isim-etiketi {
+    /* Tam siyah yerine, temanın koyu kahverengisini kullanalım */
+    -fx-text-fill: #3d2e26;
+    /* Şık, tırnaklı (serif) bir font ailesi */
+    -fx-font-family: "Georgia", "Times New Roman", Serif;
+    -fx-font-size: 15px;
+    -fx-font-weight: normal; /* Veya biraz daha belirgin olması için 'bold' yapabilirsiniz */
+    -fx-alignment: center;
+    /* Yazıya çok hafif, altın sarısı bir gölge vererek öne çıkaralım */
+    -fx-effect: dropshadow(one-pass-box, rgba(212, 175, 122, 0.3), 1, 0.0, 1, 1);
+}
