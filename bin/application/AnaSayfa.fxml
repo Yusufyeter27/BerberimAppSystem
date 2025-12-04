@@ -32,7 +32,7 @@
                         <Image url="@../../../../../Downloads/kişiikonu-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="491.0" layoutY="2.0" text="Yusuf Yeter">
+                  <Label fx:id="profiltext" layoutX="491.0" layoutY="2.0" text="Yusuf Yeter">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -60,7 +60,7 @@
                   </Text>
                   <MenuButton layoutX="701.0" layoutY="21.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="16.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="701.0" AnchorPane.rightAnchor="48.5" AnchorPane.topAnchor="21.0">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Profilim">
+                        <MenuItem fx:id="profilim" mnemonicParsing="false" onAction="#profilimclick" text="Profilim">
                            <graphic>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -69,7 +69,7 @@
                               </ImageView>
                            </graphic>
                         </MenuItem>
-                        <MenuItem mnemonicParsing="false" text="Randevularım">
+                        <MenuItem fx:id="randevularim" mnemonicParsing="false" onAction="#randevularimclick" text="Randevularım">
                            <graphic>
                               <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -78,7 +78,7 @@
                               </ImageView>
                            </graphic>
                         </MenuItem>
-                        <MenuItem mnemonicParsing="false" text="Çıkış Yap">
+                        <MenuItem fx:id="cikisyap" mnemonicParsing="false" onAction="#cikisyapclick" text="Çıkış Yap">
                            <graphic>
                               <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
