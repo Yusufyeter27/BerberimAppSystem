@@ -7,6 +7,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.Node;
+import java.io.IOException;
 
 public class AnaSayfaController {
 
@@ -24,6 +30,9 @@ public class AnaSayfaController {
 
     @FXML
     private Label profiltext;
+    public void setProfilText(String adSoyad) {
+        profiltext.setText(adSoyad);
+    }
 
     @FXML
     private Button randevuAlTiklandi;
@@ -36,8 +45,20 @@ public class AnaSayfaController {
 
     @FXML
     void cikisyapclick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Login.fxml"));
+            Parent root = loader.load();
 
+            Stage stage = (Stage) profiltext.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("HATA: Çıkış Yapılamadı.");
+        }
     }
+
 
     @FXML
     void profilimclick(ActionEvent event) {
@@ -46,13 +67,25 @@ public class AnaSayfaController {
 
     @FXML
     void randevuAlTiklandi(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Randevu.fxml"));
+            Parent root = loader.load();
 
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("HATA: randevulara giris Yapılamadı.");
+        }
     }
 
     @FXML
     void randevularimclick(ActionEvent event) {
 
     }
+
 
     @FXML
     void initialize() {
