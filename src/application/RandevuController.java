@@ -1,11 +1,11 @@
 package application;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
@@ -34,6 +34,9 @@ public class RandevuController {
     private DatePicker randevuTarihi;
 
     @FXML
+    private Label randevuisimtext;
+
+    @FXML
     private MenuItem randevularim;
 
     @FXML
@@ -50,9 +53,17 @@ public class RandevuController {
     void randevularimclick(ActionEvent event) {
 
     }
-    public void initialize(URL location, ResourceBundle resources) {
-         //UNUTMA EMOŞŞ TARİH SEÇİM KISMINI
+
+    @FXML
+    void initialize() {
+        assert RandevuIsmi != null : "fx:id=\"RandevuIsmi\" was not injected: check your FXML file 'Randevu.fxml'.";
+        assert cikisyap != null : "fx:id=\"cikisyap\" was not injected: check your FXML file 'Randevu.fxml'.";
+        assert personelgrup != null : "fx:id=\"personelgrup\" was not injected: check your FXML file 'Randevu.fxml'.";
+        assert profilim != null : "fx:id=\"profilim\" was not injected: check your FXML file 'Randevu.fxml'.";
+        assert randevuTarihi != null : "fx:id=\"randevuTarihi\" was not injected: check your FXML file 'Randevu.fxml'.";
+        assert randevuisimtext != null : "fx:id=\"randevuisimtext\" was not injected: check your FXML file 'Randevu.fxml'.";
+        assert randevularim != null : "fx:id=\"randevularim\" was not injected: check your FXML file 'Randevu.fxml'.";
+
     }
+
 }
-
-

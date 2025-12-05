@@ -45,32 +45,34 @@ public class LoginController {
     @FXML
     private ToggleButton musterigirisi;
 
-    // Kullanıcı depolama nesnesi
     private static KullaniciDepolama depo = new KullaniciDepolama();
 
     @FXML
     void berbergirisiClick(ActionEvent event) {
-        // Berber girişine özel mantık buraya eklenebilir
     }
-
     @FXML
     void musterigirisiClick(ActionEvent event) {
-        // Müşteri girişine özel mantık buraya eklenebilir
     }
 
     @FXML
     void girisYapClick(ActionEvent event) {
         String kullaniciAdi = giriskullaniciadi.getText();
         String sifre = girissifre.getText();
-
-        // Dosyadaki tüm kayıtları RAM'e yükle
         depo.dosyadanOku();
 
         if (depo.girisYap(kullaniciAdi, sifre)) {
             System.out.println("Giriş başarılı, ana sayfaya yönlendirildiniz.");
-
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("/application/anasayfa.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/AnaSayfa.fxml"));
+                Parent root = loader.load();
+
+                AnaSayfaController anaSayfaController = loader.getController();
+
+                Kullanici girisYapan = depo.getKullanici(kullaniciAdi);
+                if (girisYapan != null) {
+                    anaSayfaController.setProfilText(girisYapan.ad + " " + girisYapan.soyad);
+                }
+
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
@@ -83,7 +85,6 @@ public class LoginController {
             System.out.println("Hatalı kullanıcı adı veya şifre!");
         }
     }
-
     @FXML
     void kayıtOlClick(ActionEvent event) {
         try {

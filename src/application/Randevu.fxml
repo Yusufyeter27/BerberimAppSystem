@@ -30,7 +30,7 @@
             <AnchorPane layoutX="-1.0" prefHeight="30.0" prefWidth="502.0" styleClass="ustPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Label layoutX="324.0" layoutY="8.0" />
-                  <Label layoutX="355.0" layoutY="2.0" prefHeight="15.0" prefWidth="67.0" text="Yusuf Yeter" AnchorPane.rightAnchor="70.0" />
+                  <Label fx:id="randevuisimtext" layoutX="355.0" layoutY="2.0" prefHeight="15.0" prefWidth="67.0" text="Yusuf Yeter" AnchorPane.rightAnchor="70.0" />
                   <Label layoutX="346.0" layoutY="21.0" text="HOŞ GELDİNİZ" AnchorPane.rightAnchor="60.0" />
                   <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="306.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="312.0" AnchorPane.rightAnchor="155.0" AnchorPane.topAnchor="0.0">
                      <image>
