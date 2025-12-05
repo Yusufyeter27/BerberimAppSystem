@@ -47,6 +47,16 @@ public class KullaniciDepolama {
             e.printStackTrace();
         }
     }
+    public Kullanici getKullanici(String kullaniciAdi) {
+        Kullanici gecici = bas;
+        while (gecici != null) {
+            if (gecici.kullaniciAdi.equals(kullaniciAdi)) {
+                return gecici;
+            }
+            gecici = gecici.sonraki;
+        }
+        return null;
+    }
     public void dosyayaEkle(Kullanici yeni) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("kullanicilar.txt", true))) {
             writer.write(yeni.ad + "," + yeni.soyad + "," + yeni.kullaniciAdi + "," + yeni.sifre);
@@ -56,12 +66,12 @@ public class KullaniciDepolama {
         }
     }
     public boolean girisYap(String kullaniciAdi, String sifre) {
-        Kullanici current = bas;
-        while (current != null) {
-            if (current.kullaniciAdi.equals(kullaniciAdi) && current.sifre.equals(sifre)) {
+        Kullanici gecici = bas;
+        while (gecici != null) {
+            if (gecici.kullaniciAdi.equals(kullaniciAdi) && gecici.sifre.equals(sifre)) {
                 return true;
             }
-            current = current.sonraki;
+            gecici = gecici.sonraki;
         }
         return false;
     }
