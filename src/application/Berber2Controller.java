@@ -11,20 +11,21 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-public class Berber1Controller {
+public class Berber2Controller {
 
     @FXML
     private ResourceBundle resources;
 
     @FXML
     private URL location;
-    @FXML
-    private ImageView geributon;
-    @FXML
-    private Button arabuton;
 
     @FXML
-    private Label berber1isimtext;
+    private Button arabuton;
+    @FXML
+    private ImageView geributon;
+
+    @FXML
+    private Label berber2isimtext;
 
     @FXML
     private MenuItem cikisyap;
@@ -64,12 +65,12 @@ public class Berber1Controller {
 
     @FXML
     void initialize() {
-        assert arabuton != null : "fx:id=\"arabuton\" was not injected: check your FXML file 'Berber1.fxml'.";
-        assert berber1isimtext != null : "fx:id=\"berber1isimtext\" was not injected: check your FXML file 'Berber1.fxml'.";
-        assert cikisyap != null : "fx:id=\"cikisyap\" was not injected: check your FXML file 'Berber1.fxml'.";
-        assert profilim != null : "fx:id=\"profilim\" was not injected: check your FXML file 'Berber1.fxml'.";
-        assert randevularim != null : "fx:id=\"randevularim\" was not injected: check your FXML file 'Berber1.fxml'.";
-        assert takvim != null : "fx:id=\"takvim\" was not injected: check your FXML file 'Berber1.fxml'.";
+        assert arabuton != null : "fx:id=\"arabuton\" was not injected: check your FXML file 'Berber2.fxml'.";
+        assert berber2isimtext != null : "fx:id=\"berber2isimtext\" was not injected: check your FXML file 'Berber2.fxml'.";
+        assert cikisyap != null : "fx:id=\"cikisyap\" was not injected: check your FXML file 'Berber2.fxml'.";
+        assert profilim != null : "fx:id=\"profilim\" was not injected: check your FXML file 'Berber2.fxml'.";
+        assert randevularim != null : "fx:id=\"randevularim\" was not injected: check your FXML file 'Berber2.fxml'.";
+        assert takvim != null : "fx:id=\"takvim\" was not injected: check your FXML file 'Berber2.fxml'.";
 
     }
 

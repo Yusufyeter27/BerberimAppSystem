@@ -161,7 +161,8 @@
     -fx-border-color: #d9c28b; /* çizgi tonu */
     -fx-border-width: 0 1px 0 0; /* sadece sağ taraf çizilir */
     -fx-padding: 5;
-}.back-btn-style {
+}
+.back-btn-style {
     /* Arka plan şeffaf kalsın ki zemin rengi görünsün */
     -fx-background-color: transparent; 
     

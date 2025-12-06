@@ -163,4 +163,76 @@
 /* 5. Üzerine gelince (Hover) efekti */
 .ozel-radio:hover .radio {
     -fx-border-color: #8B7355;     /* Biraz daha koyu bir kahve tonu */
+}/* 1. Butonun Normal Hali (Sakin Durum) */
+.back-btn-style {
+    /* Arka plan şeffaf kalsın ki zemin rengi görünsün */
+    -fx-background-color: transparent; 
+    
+    /* İkon rengi (Koyu Gri - Antrasit) */
+    -fx-text-fill: #2D2D2D; 
+    
+    /* Hover ve Pressed efektinin yuvarlak çıkması için */
+    -fx-background-radius: 50%; 
+    
+    /* Geçişlerin yumuşak olması için (JavaFX CSS'de her zaman çalışmaz ama eklemekte fayda var) */
+    -fx-cursor: hand;
+}
+
+/* 2. Mouse ile Üzerine Gelince (Hover) */
+.back-btn-style:hover {
+    /* Hafif bir gölge gibi arka plan belirsin */
+    -fx-background-color: rgba(0, 0, 0, 0.05); 
+    
+    /* İkon rengi biraz daha koyulaşsın */
+    -fx-text-fill: #000000;
+    
+    /* Hafifçe büyüsün */
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+/* 3. Tıklandığı An (Pressed - İstediğin Efekt) */
+.back-btn-style:pressed {
+    /* Tıklayınca arka plan biraz daha belirginleşsin */
+    -fx-background-color: rgba(0, 0, 0, 0.15); 
+    
+    /* İÇE GÖÇME EFEKTİ: Butonu küçültüyoruz */
+    -fx-scale-x: 0.90; 
+    -fx-scale-y: 0.90;
+    
+    /* İkon rengi değişebilir (Örn: Logodaki kahve tonu olabilir veya siyah kalabilir) */
+    -fx-text-fill: #3E2723; 
+    
+    /* Hafif aşağı kayma hissi (Mekanik buton hissi verir) */
+    -fx-translate-y: 2px;
+}/* --- ONAYLA BUTONU (KÜÇÜLTÜLMÜŞ & MAT GOLD) --- */
+.confirm-button {
+    /* Daha tok ve mat bir Altın rengi */
+    -fx-background-color: #C5A028; 
+    
+    /* Yazı rengi (Koyu Kahve) */
+    -fx-text-fill: #3E2723;        
+    -fx-font-weight: bold;
+    
+    /* Yazı boyutu ve Buton genişliğini azalttık (Taşmayı önler) */
+    -fx-font-size: 13px;           
+    -fx-padding: 5 25 5 25;        
+    
+    -fx-background-radius: 15;     
+    -fx-cursor: hand;
+    
+    /* Daha hafif bir gölge */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 3, 0, 0, 2);
+}
+
+/* Üzerine gelince */
+.confirm-button:hover {
+    -fx-background-color: #5D4037; /* Koyu kahve */
+    -fx-text-fill: #E0C060;        /* Açık mat gold */
+}
+
+/* Tıklanma anı */
+.confirm-button:pressed {
+    -fx-background-color: #3E2723;
+    -fx-effect: none;
 }

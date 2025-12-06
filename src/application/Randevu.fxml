@@ -37,7 +37,7 @@
                         <Image url="@../../../../../Downloads/kişiikonu-removebg-preview.png" />
                      </image>
                   </ImageView>
-                  <Text layoutX="54.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BERBERİM" wrappingWidth="77.03515625" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="5.0">
+                  <Text layoutX="85.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BERBERİM" wrappingWidth="77.03515625" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="9.47021484375">
                      <font>
                         <Font name="Apple Chancery" size="13.0" />
                      </font>
@@ -45,7 +45,7 @@
                         <ColorAdjust />
                      </effect>
                   </Text>
-                  <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="13.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../../../../PROJE%20RESİMLERİ/ikon3-removebg-preview.png" />
                      </image>
@@ -89,6 +89,11 @@
                         <String fx:value="menu-button" />
                      </styleClass>
                   </MenuButton>
+                  <ImageView fx:id="geributon" fitHeight="43.0" fitWidth="37.0" layoutX="16.0" layoutY="-3.0" onMouseClicked="#geributonclick" pickOnBounds="true" preserveRatio="true" styleClass="back-btn-style" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../../../../../Downloads/geriçıkışbuton-removebg-preview.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
             <Label layoutX="12.0" layoutY="47.0" styleClass="circle-label" text="1" AnchorPane.leftAnchor="11.0" />
@@ -115,12 +120,12 @@
                   <Font name="Apple Chancery" size="15.0" />
                </font>
             </Text>
-            <DatePicker fx:id="randevuTarihi" layoutX="271.0" layoutY="149.0" prefWidth="200.0" promptText="Randevu Tarihi Seçiniz" AnchorPane.leftAnchor="260.0">
+            <DatePicker fx:id="randevuTarihi" layoutX="203.0" layoutY="138.0" prefWidth="200.0" promptText="Randevu Tarihi Seçiniz" AnchorPane.leftAnchor="216.0">
                <styleClass>
                   <String fx:value="date-picker" />
                   <String fx:value="date-picker-popup" />
                </styleClass></DatePicker>
-            <HBox layoutX="263.5" layoutY="110.0" prefHeight="18.0" prefWidth="226.0" styleClass="ozel-radio" AnchorPane.leftAnchor="262.0">
+            <HBox layoutX="263.5" layoutY="110.0" prefHeight="18.0" prefWidth="226.0" styleClass="ozel-radio" AnchorPane.leftAnchor="216.0">
                <children>
                   <RadioButton accessibleText="Yusuf Yeter" mnemonicParsing="false" prefHeight="18.0" prefWidth="77.0" styleClass="fancy-radio" text="Yusuf Yeter   ">
                      <font>
@@ -142,7 +147,7 @@
                   </RadioButton>
                </children>
             </HBox>
-            <TilePane hgap="4.0" layoutX="258.0" layoutY="206.0" prefColumns="8" prefHeight="81.0" prefRows="8" prefWidth="220.0" styleClass="saat-butonu" vgap="4.0" AnchorPane.leftAnchor="258.0">
+            <TilePane hgap="4.0" layoutX="216.0" layoutY="188.0" prefColumns="8" prefHeight="81.0" prefRows="8" prefWidth="220.0" styleClass="saat-butonu" vgap="4.0" AnchorPane.leftAnchor="216.0" AnchorPane.topAnchor="185.0">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
@@ -257,22 +262,23 @@
                   </Button>
                </children>
             </TilePane>
-            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="285.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="280.0">
+            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="285.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="230.0">
                <image>
                   <Image url="@../../../../../Downloads/kişiberberikonu-removebg-preview.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="358.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="350.0">
+            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="308.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="188.0" AnchorPane.leftAnchor="310.0">
                <image>
                   <Image url="@../../../../../Downloads/kişiberberikonu-removebg-preview.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="420.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="420.0">
+            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="420.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="395.0">
                <image>
                   <Image url="@../../../../../Downloads/kişiberberikonu-removebg-preview.png" />
                </image>
             </ImageView>
-            <Text fx:id="RandevuIsmi" layoutX="319.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hizmet seçimi" />
+            <Text fx:id="RandevuIsmi" layoutX="205.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hizmet seçimi" AnchorPane.leftAnchor="216.0" />
+            <Button fx:id="randevuonaylabuton" layoutX="389.0" layoutY="273.0" mnemonicParsing="false" onAction="#randevuonaylabutonclick" prefHeight="25.0" prefWidth="88.0" styleClass="confirm-button" text="Onayla" />
          </children>
       </AnchorPane>
    </children>
