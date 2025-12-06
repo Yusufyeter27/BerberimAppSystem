@@ -74,6 +74,11 @@ public class RandevuController {
     }
 
     @FXML
+    void saatTiklandi(ActionEvent event) {
+
+    }
+
+    @FXML
     void initialize() {
         assert RandevuIsmi != null : "fx:id=\"RandevuIsmi\" was not injected: check your FXML file 'Randevu.fxml'.";
         assert cikisyap != null : "fx:id=\"cikisyap\" was not injected: check your FXML file 'Randevu.fxml'.";
