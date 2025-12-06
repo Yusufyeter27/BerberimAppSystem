@@ -66,18 +66,28 @@ public class AnaSayfaController {
     }
 
     @FXML
-    void randevuAlTiklandi(ActionEvent event) {
+    private void randevuAlTiklandi(ActionEvent event) {
+        Button tiklananButon = (Button) event.getSource();
+        String randevuIsmi = tiklananButon.getAccessibleText();
+
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Randevu.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Randevu.fxml"));
             Parent root = loader.load();
 
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            // Controller'ı al
+            RandevuController randevuController = loader.getController();
+            randevuController.setRandevuIsmi(randevuIsmi);
+
+            // Giriş yapan kullanıcı ad-soyadını al (profiltext Label'ından)
+            String kullaniciAdiSoyadi = profiltext.getText();
+            randevuController.setKullaniciAdi(kullaniciAdiSoyadi);
+
+            // Sahneyi değiştir
+            Stage stage = (Stage) tiklananButon.getScene().getWindow();
+            stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("HATA: randevulara giris Yapılamadı.");
         }
     }
 

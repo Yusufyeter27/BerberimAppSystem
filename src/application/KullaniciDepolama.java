@@ -1,12 +1,21 @@
 package application;
 
 import java.io.*;
+
 public class KullaniciDepolama {
-    public Kullanici bas;
+    private Kullanici bas;
+
+    // BURADA EKLEDİM! Varsayılan dosya müşteri dosyası.
+    private String dosyaAdi = "kullanicilar.txt";
+
+    public void setDosyaAdi(String dosyaAdi) {
+        this.dosyaAdi = dosyaAdi;
+    }
 
     public KullaniciDepolama() {
         bas = null;
     }
+
     public void ekle(Kullanici yeni) {
         if (bas == null) {
             bas = yeni;
@@ -18,14 +27,15 @@ public class KullaniciDepolama {
             gecici.sonraki = yeni;
         }
     }
+
     public void dosyayaYaz() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("kullanicilar.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(dosyaAdi))) {
             Kullanici gecici = bas;
             while (gecici != null) {
                 writer.write(gecici.ad + "," +
-                             gecici.soyad + "," +
-                             gecici.kullaniciAdi + "," +
-                             gecici.sifre);
+                        gecici.soyad + "," +
+                        gecici.kullaniciAdi + "," +
+                        gecici.sifre);
                 writer.newLine();
                 gecici = gecici.sonraki;
             }
@@ -33,8 +43,26 @@ public class KullaniciDepolama {
             e.printStackTrace();
         }
     }
+
+    public void dosyayaEkle(Kullanici yeni) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(dosyaAdi, true))) {
+            writer.write(yeni.ad + "," + yeni.soyad + "," +
+                    yeni.kullaniciAdi + "," + yeni.sifre);
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void dosyadanOku() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("kullanicilar.txt"))) {
+        bas = null; // eski listeyi temizle
+        File f = new File(dosyaAdi);
+
+        if (!f.exists()) {
+            return;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(dosyaAdi))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] fields = line.split(",");
@@ -47,6 +75,7 @@ public class KullaniciDepolama {
             e.printStackTrace();
         }
     }
+
     public Kullanici getKullanici(String kullaniciAdi) {
         Kullanici gecici = bas;
         while (gecici != null) {
@@ -57,32 +86,16 @@ public class KullaniciDepolama {
         }
         return null;
     }
-    public void dosyayaEkle(Kullanici yeni) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("kullanicilar.txt", true))) {
-            writer.write(yeni.ad + "," + yeni.soyad + "," + yeni.kullaniciAdi + "," + yeni.sifre);
-            writer.newLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
     public boolean girisYap(String kullaniciAdi, String sifre) {
         Kullanici gecici = bas;
         while (gecici != null) {
-            if (gecici.kullaniciAdi.equals(kullaniciAdi) && gecici.sifre.equals(sifre)) {
+            if (gecici.kullaniciAdi.equals(kullaniciAdi)
+                    && gecici.sifre.equals(sifre)) {
                 return true;
             }
             gecici = gecici.sonraki;
         }
         return false;
-    }
-    public void listele() {
-        Kullanici gecici = bas;
-        while (gecici != null) {
-            System.out.println("Ad: " + gecici.ad +
-                               ", Soyad: " + gecici.soyad +
-                               ", Kullanıcı Adı: " + gecici.kullaniciAdi +
-                               ", Şifre: " + gecici.sifre);
-            gecici = gecici.sonraki;
-        }
     }
 }

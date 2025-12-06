@@ -1,8 +1,10 @@
 package application;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +17,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+import javafx.application.Platform;
+import javafx.scene.input.KeyCode;
 
 public class LoginController {
 
@@ -47,44 +51,111 @@ public class LoginController {
 
     private static KullaniciDepolama depo = new KullaniciDepolama();
 
+    private boolean berberMi = false;
+
+    @FXML
+    void initialize() {
+
+        // müşteri girişini seç
+        musterigirisi.setSelected(true);
+        berbergirisi.setSelected(false);
+
+        kayitolbutton.setVisible(true);
+        berberMi = false;
+
+        depo.setDosyaAdi("kullanicilar.txt");
+        depo.dosyadanOku();
+
+        // SADECE BU KISIM ENTER İÇİN DOĞRU VE HATASIZ
+        girisbutton.sceneProperty().addListener((obs, oldScene, newScene) -> {
+            if (newScene != null) {
+                newScene.setOnKeyPressed(event -> {
+                    if (event.getCode() == KeyCode.ENTER) {
+                        girisbutton.fire();
+                    }
+                });
+            }
+        });
+    }
+
+
+
     @FXML
     void berbergirisiClick(ActionEvent event) {
+        kayitolbutton.setVisible(false);
+
+        depo.setDosyaAdi("berber.txt");
+        depo.dosyadanOku();
+
+        berberMi = true;
+
+        File file = new File("berber.txt");
+        if (!file.exists()) {
+            System.out.println("UYARI: berber.txt bulunamadı!");
+        }
     }
+
     @FXML
     void musterigirisiClick(ActionEvent event) {
+        kayitolbutton.setVisible(true);
+
+        depo.setDosyaAdi("kullanicilar.txt");
+        depo.dosyadanOku();
+
+        berberMi = false;
+
+        File file = new File("kullanicilar.txt");
+        if (!file.exists()) {
+            System.out.println("UYARI: kullanicilar.txt bulunamadı!");
+        }
     }
 
     @FXML
     void girisYapClick(ActionEvent event) {
         String kullaniciAdi = giriskullaniciadi.getText();
         String sifre = girissifre.getText();
+
         depo.dosyadanOku();
 
         if (depo.girisYap(kullaniciAdi, sifre)) {
-            System.out.println("Giriş başarılı, ana sayfaya yönlendirildiniz.");
+            System.out.println("Giriş başarılı.");
+
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/AnaSayfa.fxml"));
-                Parent root = loader.load();
+                Parent root;
+                FXMLLoader loader;
 
-                AnaSayfaController anaSayfaController = loader.getController();
+                if (berberMi) {
+                    // *** DÜZELTİLEN SATIR ***
+                    loader = new FXMLLoader(getClass().getResource("/application/BarberRandevu.fxml"));
+                    root = loader.load();
 
-                Kullanici girisYapan = depo.getKullanici(kullaniciAdi);
-                if (girisYapan != null) {
-                    anaSayfaController.setProfilText(girisYapan.ad + " " + girisYapan.soyad);
+                } else {
+                    loader = new FXMLLoader(getClass().getResource("/application/AnaSayfa.fxml"));
+                    root = loader.load();
+
+                    AnaSayfaController anaSayfaController = loader.getController();
+
+                    Kullanici girisYapan = depo.getKullanici(kullaniciAdi);
+                    if (girisYapan != null) {
+                        anaSayfaController.setProfilText(girisYapan.ad + " " + girisYapan.soyad);
+                    }
                 }
 
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
+
             } catch (IOException e) {
                 e.printStackTrace();
-                System.out.println("HATA: Ana sayfa yüklenemedi!");
+                System.out.println("HATA: Sayfa yüklenemedi!");
             }
+
         } else {
             System.out.println("Hatalı kullanıcı adı veya şifre!");
         }
     }
+
     @FXML
     void kayıtOlClick(ActionEvent event) {
         try {
@@ -96,7 +167,7 @@ public class LoginController {
             System.out.println("Kayıt ol sayfasına yönlendirildi.");
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("HATA: Sayfa yüklenemedi! Dosya yolunu kontrol et.");
+            System.out.println("HATA: Sayfa yüklenemedi!");
         }
     }
 }
