@@ -64,17 +64,72 @@ public class BarberRandevuController {
 
     @FXML
     void emrebutonclick(ActionEvent event) {
-        // Emre buton işlemleri buraya
+    	try {
+            // Berber1.fxml'i yükle
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Berber2.fxml"));
+            Parent root = loader.load();
+
+            // Mevcut pencereyi (Stage) bul
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            
+            // Sahneyi değiştir
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            
+            System.out.println("Yusuf butonu Berber1 sayfasına yönlendirdi.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("HATA: Berber1.fxml yüklenemedi: " + e.getMessage());
+        }
     }
 
     @FXML
     void kadirbutonclick(ActionEvent event) {
-        // Kadir buton işlemleri buraya
+    	try {
+            // Berber1.fxml'i yükle
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Berber3.fxml"));
+            Parent root = loader.load();
+
+            // Mevcut pencereyi (Stage) bul
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            
+            // Sahneyi değiştir
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            
+            System.out.println("Yusuf butonu Berber1 sayfasına yönlendirdi.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("HATA: Berber1.fxml yüklenemedi: " + e.getMessage());
+        }
     }
 
     @FXML
     void yusufbutonclick(ActionEvent event) {
-        // Yusuf buton işlemleri buraya
+        // Yusuf butonu tıklandığında Berber1.fxml sayfasına yönlendirme
+        try {
+            // Berber1.fxml'i yükle
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Berber1.fxml"));
+            Parent root = loader.load();
+
+            // Mevcut pencereyi (Stage) bul
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            
+            // Sahneyi değiştir
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            
+            System.out.println("Yusuf butonu Berber1 sayfasına yönlendirdi.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("HATA: Berber1.fxml yüklenemedi: " + e.getMessage());
+        }
     }
 
     @FXML
