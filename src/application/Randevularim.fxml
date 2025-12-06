@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="600.0" stylesheets="@randevularim.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../../../../PROJE%20RESİMLERİ/l.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="23.0" layoutY="27.0" prefHeight="294.0" prefWidth="551.0" style="-fx-background-color: white;" styleClass="arkaPlan" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <AnchorPane layoutX="21.0" layoutY="12.0" prefHeight="30.0" prefWidth="502.0" styleClass="ustPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="324.0" layoutY="8.0" />
+                  <Label fx:id="randevuisimtext" layoutX="355.0" layoutY="2.0" prefHeight="15.0" prefWidth="67.0" text="Yusuf Yeter" AnchorPane.rightAnchor="70.0" />
+                  <Label layoutX="346.0" layoutY="21.0" text="HOŞ GELDİNİZ" AnchorPane.rightAnchor="60.0" />
+                  <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="358.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="358.0" AnchorPane.rightAnchor="152.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../../../../../Downloads/kişiikonu-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="84.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BERBERİM" wrappingWidth="77.03515625" AnchorPane.leftAnchor="84.0" AnchorPane.topAnchor="8.0">
+                     <font>
+                        <Font name="Apple Chancery" size="13.0" />
+                     </font>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </Text>
+                  <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
+                     <image>
+                        <Image url="@../../../../PROJE%20RESİMLERİ/ikon3-removebg-preview.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust />
+                     </effect>
+                  </ImageView>
+                  <MenuButton layoutX="492.0" layoutY="3.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="40.0">
+                     <items>
+                        <MenuItem fx:id="profilim" mnemonicParsing="false" onAction="#profilimclick" text="Profilim">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../PROJE%20RESİMLERİ/kişiikonu-removebg-preview.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="randevularim" mnemonicParsing="false" onAction="#randevularimclick" text="Randevularım">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Downloads/randevuikonu-removebg-preview.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                        <MenuItem fx:id="cikisyap" mnemonicParsing="false" onAction="#cikisyapclick" text="Çıkış Yap">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../Downloads/çıkışikonu-removebg-preview.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </MenuItem>
+                     </items>
+                     <styleClass>
+                        <String fx:value="arrow-button" />
+                        <String fx:value="arrow" />
+                        <String fx:value="menu-button" />
+                     </styleClass>
+                  </MenuButton>
+                  <ImageView fx:id="geributon" fitHeight="43.0" fitWidth="37.0" layoutX="15.0" layoutY="1.0" onMouseClicked="#geributonclick" pickOnBounds="true" preserveRatio="true" styleClass="back-btn-style" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="498.0" AnchorPane.topAnchor="1.0">
+                     <image>
+                        <Image url="@../../../../../Downloads/geriçıkışbuton-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <ScrollPane fitToWidth="true" layoutX="15.0" layoutY="71.0" prefHeight="214.0" prefWidth="520.0">
+               <content>
+                  <VBox prefHeight="213.0" prefWidth="504.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="25.0" prefWidth="518.0">
+                           <children>
+                              <Label prefHeight="25.0" prefWidth="33.0" text="İşlem" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <Label layoutX="18.0" layoutY="47.0" text="Randevularım">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

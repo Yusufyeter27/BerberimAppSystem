@@ -10,6 +10,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+// Yönlendirme için gerekli kütüphaneler:
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.Node;
+import java.io.IOException;
 
 public class Berber3Controller {
 
@@ -42,27 +49,64 @@ public class Berber3Controller {
 
     @FXML
     void arabutonclick(ActionEvent event) {
-
+        // Arama işlevi buraya gelecek
     }
 
     @FXML
     void cikisyapclick(ActionEvent event) {
+        // Çıkış Yap -> Login.fxml
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Login.fxml"));
+            Parent root = loader.load();
 
+            // MenuItem'ın ait olduğu pencereyi (Stage) bul
+            Stage stage = (Stage) ((MenuItem)event.getSource())
+                    .getParentPopup().getOwnerWindow();
+
+            // Sahneyi değiştir
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            
+            System.out.println("Başarıyla çıkış yapıldı ve Login ekranına yönlendirildi.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("HATA: Login ekranına geçiş yapılamadı: " + e.getMessage());
+        }
     }
 
     @FXML
     void geributonclick(MouseEvent event) {
+        // Geri Butonu -> BarberRandevu.fxml
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/BarberRandevu.fxml"));
+            Parent root = loader.load();
 
+            // Mevcut pencereyi (Stage) butondan (Node) yola çıkarak bul
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            // Sahneyi değiştir
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            
+            System.out.println("Geri butonuna tıklandı ve BarberRandevu ekranına yönlendirildi.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("HATA: BarberRandevu.fxml yüklenemedi: " + e.getMessage());
+        }
     }
 
     @FXML
     void profilimclick(ActionEvent event) {
-
+        // Profilim işlevi buraya gelecek
     }
 
     @FXML
     void randevularimclick(ActionEvent event) {
-
+        // Randevularım işlevi buraya gelecek
     }
 
     @FXML

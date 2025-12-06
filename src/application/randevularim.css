@@ -1,0 +1,25 @@
+.ustPane{
+	-fx-background-color: linear-gradient(to right, #C19A6B, #E6C288); /* Hafif degrade geçişli */
+-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+	-fx-background-radius: 20;
+}
+.menu-button {
+    -fx-padding: 0.2em 0.2em; 
+    -fx-background-color:linear-gradient(to right, #C19A6B, #E6C288)
+}
+.arkaPlan{
+   -fx-background-color: #f2f2f2;
+-fx-background-radius: 20;
+-fx-border-color: rgba(255, 255, 255, 0.60);
+-fx-border-radius: 20;
+-fx-border-width: 1.5;
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);}
+/* 1. Bilgilerimi Güncelle Butonu */
+.guncelle-btn {
+    -fx-background-color: #C5A065; /* Mat Gold Rengi */
+    -fx-text-fill: white;           /* Yazı Rengi */
+    -fx-background-radius: 20;      /* Köşeleri Yuvarlatma */
+    -fx-cursor: hand;               /* Üzerine gelince el işareti */
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
