@@ -8,6 +8,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -97,6 +98,20 @@ public class RandevuController {
     void randevularimclick(ActionEvent event) {
         // Randevularım tıklandığında yapılacaklar
     }
+    @FXML
+    private void geributonclick(MouseEvent event) {
+        // tıklanınca yapılacak işlemler
+    }
+    @FXML
+    void saatTiklandi(ActionEvent event) {
+
+    }
+    @FXML
+    public void randevuonaylabutonclick(ActionEvent event) {
+       
+    }
+
+
 
     @FXML
     void initialize() {
