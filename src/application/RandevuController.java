@@ -145,19 +145,8 @@ public class RandevuController {
     @FXML
     void randevularimclick(ActionEvent event) {
     }
-<<<<<<< HEAD
-    @FXML
-    private void geributonclick(MouseEvent event) {
-        // tıklanınca yapılacak işlemler
-    }
-    @FXML
-    void saatTiklandi(ActionEvent event) {
 
-    }
-    @FXML
-    public void randevuonaylabutonclick(ActionEvent event) {
-       
-    }
+  
 
 
 
@@ -171,8 +160,5 @@ public class RandevuController {
         assert randevuisimtext != null : "fx:id=\"randevuisimtext\" was not injected: check your FXML file 'Randevu.fxml'.";
         assert randevularim != null : "fx:id=\"randevularim\" was not injected: check your FXML file 'Randevu.fxml'.";
     }
-=======
-    
-    // ... (initialize metodu eksik olduğu için varsayımsal olarak eklenmemiştir, ancak FXML bağlantılarını kontrol eder)
->>>>>>> refs/remotes/origin/transformers
+
 }
