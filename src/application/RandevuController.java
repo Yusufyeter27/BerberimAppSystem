@@ -4,14 +4,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class RandevuController {
 
@@ -28,9 +29,6 @@ public class RandevuController {
     private MenuItem cikisyap;
 
     @FXML
-    private ImageView geributon;
-
-    @FXML
     private ToggleGroup personelgrup;
 
     @FXML
@@ -42,54 +40,72 @@ public class RandevuController {
     @FXML
     private Label randevuisimtext;
 
+    public void setRandevuIsmi(String islemAdi) { //RandevuController
+        RandevuIsmi.setText(islemAdi); // Görselde göster
+        RandevuIsmi.setAccessibleText(islemAdi); // Erişilebilirlik için
+    }
     @FXML
     private MenuItem randevularim;
 
-    @FXML
-    private Button randevuonaylabuton;
+    // Kullanıcı adını set etmek için metod
+    public void setKullaniciAdi(String adSoyad) {
+        randevuisimtext.setText(adSoyad);
+    }
 
     @FXML
     void cikisyapclick(ActionEvent event) {
+        try {
+            // Login sayfasına geçiş
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            Parent root = loader.load();
 
+            Stage stage = (Stage) ((MenuItem)event.getSource())
+                    .getParentPopup().getOwnerWindow();
+
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    @FXML
-    void geributonclick(MouseEvent event) {
+    // Randevu sayfasını açarken kullanıcı adı gönderen metot
+    public void randevuSayfasiAc(String kullaniciAdi) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Randevu.fxml"));
+            Parent root = loader.load();
 
+            // Controller'ı al ve kullanıcı adını gönder
+            RandevuController randevuController = loader.getController();
+            randevuController.setKullaniciAdi(kullaniciAdi);
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
 
     @FXML
     void profilimclick(ActionEvent event) {
-
+        // Profilim tıklandığında yapılacaklar
     }
 
     @FXML
     void randevularimclick(ActionEvent event) {
-
-    }
-
-    @FXML
-    void randevuonaylabutonclick(ActionEvent event) {
-
-    }
-
-    @FXML
-    void saatTiklandi(ActionEvent event) {
-
+        // Randevularım tıklandığında yapılacaklar
     }
 
     @FXML
     void initialize() {
         assert RandevuIsmi != null : "fx:id=\"RandevuIsmi\" was not injected: check your FXML file 'Randevu.fxml'.";
         assert cikisyap != null : "fx:id=\"cikisyap\" was not injected: check your FXML file 'Randevu.fxml'.";
-        assert geributon != null : "fx:id=\"geributon\" was not injected: check your FXML file 'Randevu.fxml'.";
         assert personelgrup != null : "fx:id=\"personelgrup\" was not injected: check your FXML file 'Randevu.fxml'.";
         assert profilim != null : "fx:id=\"profilim\" was not injected: check your FXML file 'Randevu.fxml'.";
         assert randevuTarihi != null : "fx:id=\"randevuTarihi\" was not injected: check your FXML file 'Randevu.fxml'.";
         assert randevuisimtext != null : "fx:id=\"randevuisimtext\" was not injected: check your FXML file 'Randevu.fxml'.";
         assert randevularim != null : "fx:id=\"randevularim\" was not injected: check your FXML file 'Randevu.fxml'.";
-        assert randevuonaylabuton != null : "fx:id=\"randevuonaylabuton\" was not injected: check your FXML file 'Randevu.fxml'.";
-
     }
-
 }
