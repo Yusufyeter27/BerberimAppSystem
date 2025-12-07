@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
@@ -14,8 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="600.0" stylesheets="@randevularim.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="600.0" stylesheets="@randevularim.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RandevularimController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -93,20 +94,209 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <ScrollPane fitToWidth="true" layoutX="15.0" layoutY="71.0" prefHeight="214.0" prefWidth="520.0">
+            <ScrollPane fitToWidth="true" layoutX="15.0" layoutY="72.0" prefHeight="214.0" prefWidth="520.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="75.0">
                <content>
-                  <VBox prefHeight="213.0" prefWidth="504.0" spacing="10.0">
+                  <VBox prefHeight="213.0" prefWidth="504.0" spacing="5.0">
                      <children>
-                        <HBox prefHeight="25.0" prefWidth="518.0">
+                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-seridi">
                            <children>
-                              <Label prefHeight="25.0" prefWidth="33.0" text="İşlem" />
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="100.0" styleClass="liste-baslik" text="Tarih">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Label>
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="100.0" styleClass="liste-baslik" text="Saat">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="100.0" styleClass="liste-baslik" text="Hizmet">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="100.0" styleClass="liste-baslik" text="Personel">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
+                           <children>
+                              <Label fx:id="lblTarih" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblSaat" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblHizmet" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPersonel" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="personel">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#btnSil1" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
+                           <children>
+                              <Label fx:id="lblTarih1" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblSaat1" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblHizmet1" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPersonel1" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="personel">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#btnSil2" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
+                           <children>
+                              <Label fx:id="lblTarih2" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblSaat2" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblHizmet2" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPersonel2" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="personel">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#btnSil3" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
+                           <children>
+                              <Label fx:id="lblTarih3" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblSaat3" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblHizmet3" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPersonel3" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="personel">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#btnSil4" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
+                           <children>
+                              <Label fx:id="lblTarih4" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblSaat4" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblHizmet4" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPersonel4" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="personel">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#btnSil5" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Button>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
+                           <children>
+                              <Label fx:id="lblTarih5" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblSaat5" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblHizmet5" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lblPersonel5" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="personel">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#btnSil6" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Button>
                            </children>
                         </HBox>
                      </children>
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
                   </VBox>
                </content>
             </ScrollPane>
-            <Label layoutX="18.0" layoutY="47.0" text="Randevularım">
+            <Label layoutX="15.0" layoutY="42.0" styleClass="randevu-baslik" text="Randevularım">
                <font>
                   <Font size="18.0" />
                </font>

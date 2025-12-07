@@ -44,28 +44,6 @@ public class AnaSayfaController {
     private Label sac;
 
     @FXML
-    void cikisyapclick(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Login.fxml"));
-            Parent root = loader.load();
-
-            Stage stage = (Stage) profiltext.getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("HATA: Çıkış Yapılamadı.");
-        }
-    }
-
-
-    @FXML
-    void profilimclick(ActionEvent event) {
-
-    }
-
-    @FXML
     private void randevuAlTiklandi(ActionEvent event) {
         Button tiklananButon = (Button) event.getSource();
         String randevuIsmi = tiklananButon.getAccessibleText();
@@ -74,11 +52,9 @@ public class AnaSayfaController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Randevu.fxml"));
             Parent root = loader.load();
 
-            // Controller'ı al
             RandevuController randevuController = loader.getController();
             randevuController.setRandevuIsmi(randevuIsmi);
 
-            // Giriş yapan kullanıcı ad-soyadını al (profiltext Label'ından)
             String kullaniciAdiSoyadi = profiltext.getText();
             randevuController.setKullaniciAdi(kullaniciAdiSoyadi);
 
@@ -92,10 +68,56 @@ public class AnaSayfaController {
     }
 
     @FXML
-    void randevularimclick(ActionEvent event) {
+    void profilimclick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Profilim.fxml"));
+            Parent root = loader.load();
 
+            ProfilimController profilimController = loader.getController();
+            profilimController.setKullaniciAdi(profiltext.getText());
+            Stage stage = (Stage) profiltext.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("HATA: Profilim.fxml yüklenemedi.");
+        }
     }
 
+    @FXML
+    void randevularimclick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Randevularim.fxml"));
+            Parent root = loader.load();
+            RandevularimController controller = loader.getController();
+            String adSoyad = profiltext.getText();
+            controller.setKullaniciAdi(adSoyad);
+            Stage stage = (Stage) profiltext.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            System.out.println("AnaSayfa → Randevularım sayfasına geçildi.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("HATA: Randevularim.fxml yüklenemedi.");
+        }
+    }
+    @FXML
+    void cikisyapclick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Login.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) profiltext.getScene().getWindow();
+            Scene scene = new Scene(root);	
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("HATA: Çıkış Yapılamadı.");
+        }
+    }
 
     @FXML
     void initialize() {
@@ -105,7 +127,5 @@ public class AnaSayfaController {
         assert randevuAlTiklandi != null : "fx:id=\"randevuAlTiklandi\" was not injected: check your FXML file 'AnaSayfa.fxml'.";
         assert randevularim != null : "fx:id=\"randevularim\" was not injected: check your FXML file 'AnaSayfa.fxml'.";
         assert sac != null : "fx:id=\"sac\" was not injected: check your FXML file 'AnaSayfa.fxml'.";
-
     }
-
 }

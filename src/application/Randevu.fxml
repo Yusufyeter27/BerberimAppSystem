@@ -152,7 +152,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <children>
-                  <Button accessibleText="09.00" disable="true" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="09.00">
+                  <Button fx:id="saat9" accessibleText="09.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="09.00">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -161,7 +161,7 @@
                         <String fx:value="saat-dolu" />
                      </styleClass>
                   </Button>
-                  <Button accessibleText="10.00" disable="true" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="19.0" prefWidth="36.0" text="10.00">
+                  <Button fx:id="saat10" accessibleText="10.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="19.0" prefWidth="36.0" text="10.00">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -170,7 +170,7 @@
                         <String fx:value="saat-dolu" />
                      </styleClass>
                   </Button>
-                  <Button accessibleText="11.00" disable="true" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="11.00">
+                  <Button fx:id="saat11" accessibleText="11.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="11.00">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -179,7 +179,7 @@
                         <String fx:value="saat-dolu" />
                      </styleClass>
                   </Button>
-                  <Button accessibleText="12.00" disable="true" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="12.00">
+                  <Button fx:id="saat12" accessibleText="12.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="12.00">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -188,7 +188,7 @@
                         <String fx:value="saat-dolu" />
                      </styleClass>
                   </Button>
-                  <Button accessibleText="13.00" disable="true" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="37.0" text="13.00">
+                  <Button fx:id="saat13" accessibleText="13.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="37.0" text="13.00">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -197,7 +197,7 @@
                         <String fx:value="saat-dolu" />
                      </styleClass>
                   </Button>
-                  <Button accessibleText="14.00" disable="true" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="37.0" text="14.00">
+                  <Button fx:id="saat14" accessibleText="14.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="37.0" text="14.00">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -206,7 +206,7 @@
                         <String fx:value="saat-dolu" />
                      </styleClass>
                   </Button>
-                  <Button accessibleText="15.00" disable="true" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="15.00">
+                  <Button fx:id="saat15" accessibleText="15.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="15.00">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -215,7 +215,7 @@
                         <String fx:value="saat-dolu" />
                      </styleClass>
                   </Button>
-                  <Button accessibleText="16.00" disable="true" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="16.00">
+                  <Button fx:id="saat16" accessibleText="16.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="16.00">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -224,7 +224,7 @@
                         <String fx:value="saat-dolu" />
                      </styleClass>
                   </Button>
-                  <Button accessibleText="17.00" disable="true" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="21.0" prefWidth="36.0" text="17.00">
+                  <Button fx:id="saat17" accessibleText="17.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="21.0" prefWidth="36.0" text="17.00">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -233,7 +233,7 @@
                         <String fx:value="saat-dolu" />
                      </styleClass>
                   </Button>
-                  <Button accessibleText="18.00" disable="true" mnemonicParsing="false" onAction="#saatTiklandi" text="18.00">
+                  <Button fx:id="saat18" accessibleText="18.00" mnemonicParsing="false" onAction="#saatTiklandi" text="18.00">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -242,7 +242,7 @@
                         <String fx:value="saat-dolu" />
                      </styleClass>
                   </Button>
-                  <Button accessibleText="19.00" disable="true" mnemonicParsing="false" onAction="#saatTiklandi" text="19.00">
+                  <Button fx:id="saat19" accessibleText="19.00" mnemonicParsing="false" onAction="#saatTiklandi" text="19.00">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -251,7 +251,7 @@
                         <String fx:value="saat-dolu" />
                      </styleClass>
                   </Button>
-                  <Button accessibleText="20.00" disable="true" mnemonicParsing="false" onAction="#saatTiklandi" text="20.00">
+                  <Button fx:id="saat20" accessibleText="20.00" mnemonicParsing="false" onAction="#saatTiklandi" text="20.00">
                      <font>
                         <Font size="10.0" />
                      </font>

@@ -14,12 +14,122 @@
 -fx-border-radius: 20;
 -fx-border-width: 1.5;
 -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);}
-/* 1. Bilgilerimi Güncelle Butonu */
-.guncelle-btn {
-    -fx-background-color: #C5A065; /* Mat Gold Rengi */
-    -fx-text-fill: white;           /* Yazı Rengi */
-    -fx-background-radius: 20;      /* Köşeleri Yuvarlatma */
-    -fx-cursor: hand;               /* Üzerine gelince el işareti */
+
+.yok{
+-fx-background: transparent; 
+-fx-background-color: transparent;
+}
+
+/* 1. Ana Başlık (Randevularım) */
+.randevu-baslik {
+    /* Yazı Tipi Ayarları */
+    -fx-font-size: 15px;
     -fx-font-weight: bold;
+    -fx-text-fill: #3E2723; /* Koyu Kahve (Okunabilirlik için) */
+    
+    /* Arka Plan ve Şekil Ayarları */
+    -fx-background-color: #D7CCC8; /* Açık Vizon/Krem rengi (Gold ile uyumlu) */
+    -fx-background-radius: 8; /* Kenarları yumuşatır */
+    -fx-border-color: #A1887F; /* Etrafına ince bir kontür */
+    -fx-border-radius: 8;
+    
+    /* Boşluklar */
+    -fx-padding: 5 10 5 10; /* Yazının etrafında iç boşluk oluşturur */
+    
+    /* Hafif Gölge (Derinlik katar) */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 5, 0, 0, 3);
+}
+
+/* 2. Liste Başlıkları (Tarih, Saat, Hizmet, Personel) */
+.liste-baslik {
     -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5D4037; /* Daha yumuşak bir kahve tonu */
+}
+
+
+
+/* 4. Sil Butonu (Kiremit Kırmızısı) */
+.btn-sil {
+    -fx-background-color: #C0392B; /* Kiremit Kırmızısı - Gold ile çok yakışır */
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.btn-sil:hover {
+    -fx-background-color: #E74C3C; /* Üzerine gelince açılır */
+}
+
+.btn-sil:pressed {
+    -fx-background-color: #962D22; /* Tıklayınca koyulaşır */
+}
+/* 1. HBox (Tüm satırın kutusu) - Altına Çizgi Ekler */
+.liste-seridi {
+    -fx-background-color: #EFEBE9; /* Hafif krem arka plan */
+    -fx-background-radius: 5 5 0 0; /* Sadece üst köşeleri yuvarla */
+    
+    /* KENARLIK AYARLARI (Sadece alt taraf için) */
+    -fx-border-color: transparent transparent #8D6E63 transparent; /* Üst-Sağ-ALT-Sol */
+    -fx-border-width: 0 0 2 0; /* Alt çizgi kalınlığı 2px */
+    
+    -fx-padding: 5;
+    -fx-alignment: CENTER_LEFT; /* İçindekileri dikeyde ortalar */
+}
+
+/* 2. Başlık Yazıları (Tarih, Saat vb.) - Araya Dikey Çizgi Ekler */
+.liste-baslik {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3E2723;
+    
+    /* SAĞ KENARLIK (Dikey Ayrım Çizgisi) */
+    -fx-border-color: transparent #BCAAA4 transparent transparent; /* Sadece SAĞ renkli */
+    -fx-border-width: 0 1 0 0; /* Sadece sağ çizgi 1px */
+    
+    /* Yazı çizgiye yapışmasın diye iç boşluk */
+    -fx-padding: 0 15 0 15; 
+}
+.back-btn-style {
+    /* Arka plan şeffaf kalsın ki zemin rengi görünsün */
+    -fx-background-color: transparent; 
+    
+    /* İkon rengi (Koyu Gri - Antrasit) */
+    -fx-text-fill: #2D2D2D; 
+    
+    /* Hover ve Pressed efektinin yuvarlak çıkması için */
+    -fx-background-radius: 50%; 
+    
+    /* Geçişlerin yumuşak olması için (JavaFX CSS'de her zaman çalışmaz ama eklemekte fayda var) */
+    -fx-cursor: hand;
+}
+
+/* 2. Mouse ile Üzerine Gelince (Hover) */
+.back-btn-style:hover {
+    /* Hafif bir gölge gibi arka plan belirsin */
+    -fx-background-color: rgba(0, 0, 0, 0.05); 
+    
+    /* İkon rengi biraz daha koyulaşsın */
+    -fx-text-fill: #000000;
+    
+    /* Hafifçe büyüsün */
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+/* 3. Tıklandığı An (Pressed - İstediğin Efekt) */
+.back-btn-style:pressed {
+    /* Tıklayınca arka plan biraz daha belirginleşsin */
+    -fx-background-color: rgba(0, 0, 0, 0.15); 
+    
+    /* İÇE GÖÇME EFEKTİ: Butonu küçültüyoruz */
+    -fx-scale-x: 0.90; 
+    -fx-scale-y: 0.90;
+    
+    /* İkon rengi değişebilir (Örn: Logodaki kahve tonu olabilir veya siyah kalabilir) */
+    -fx-text-fill: #3E2723; 
+    
+    /* Hafif aşağı kayma hissi (Mekanik buton hissi verir) */
+    -fx-translate-y: 2px;
 }

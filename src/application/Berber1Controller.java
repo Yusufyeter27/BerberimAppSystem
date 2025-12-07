@@ -2,6 +2,7 @@ package application;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,14 +11,20 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.fxml.FXMLLoader; // FXML yükleyici
-import javafx.scene.Parent;   // Yüklenen FXML kök öğesi
-import javafx.scene.Scene;    // Sahneyi değiştirmek için
-import javafx.stage.Stage;    // Pencereyi (Stage) bulmak için
-import java.io.IOException;   // Hata yakalama (try/catch) için
-import javafx.scene.Node;     // event.getSource() öğesini dönüştürmek için
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.Node;
 
 public class Berber1Controller {
+
+    // KALDANMIŞTIR: Hata veren Label'lar (Bu Label'lar FXML'de bağlı değilse NullPointerException verir)
+    /* @FXML private Label musteriLabel; 
+    @FXML private Label tarihLabel; 
+    @FXML private Label saatLabel; 
+    @FXML private Label hizmetLabel; 
+    */
 
     @FXML
     private ResourceBundle resources;
@@ -46,29 +53,35 @@ public class Berber1Controller {
     @FXML
     private DatePicker takvim;
 
+    
+    // HATA VEREN METOT KISMI YORUM SATIRI YAPILDI / KALDIRILDI
+    /*
+    private void loadRandevu() {
+        // ... (Bu metot içindeki musteriLabel.setText(data[0]); gibi satırlar null olduğu için hata veriyordu.)
+    }
+    */
+
+
+    // BUTONLAR
     @FXML
     void arabutonclick(ActionEvent event) {
-        // Arama işlevi buraya gelecek
+        // Arama işlevi sonra eklenecek
     }
 
     @FXML
     void geributonclick(MouseEvent event) {
-        // Geri butonu (ImageView) tıklandığında BarberRandevu.fxml sayfasına yönlendirme
+
         try {
-            // BarberRandevu.fxml dosyasını yükle
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/BarberRandevu.fxml"));
             Parent root = loader.load();
 
-            // Mevcut pencereyi (Stage) butondan (Node) yola çıkarak bul
-            // MouseEvent'in kaynağı ImageView olduğu için Node'a cast ediyoruz.
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            // Sahneyi değiştir
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-            
-            System.out.println("Geri butonuna tıklandı ve BarberRandevu ekranına yönlendirildi.");
+
+            System.out.println("Geri butonuna tıklandı ve BarberRandevu ekranına geçildi.");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -79,45 +92,65 @@ public class Berber1Controller {
     @FXML
     void cikisyapclick(ActionEvent event) {
         try {
-            // Login.fxml dosyasını yükle
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Login.fxml"));
             Parent root = loader.load();
 
-            // MenuItem bir MenuButton'a bağlı olduğu için, Stage'i bu şekilde bulmalıyız.
-            Stage stage = (Stage) ((MenuItem)event.getSource())
+            Stage stage = (Stage) ((MenuItem) event.getSource())
                     .getParentPopup().getOwnerWindow();
 
-            // Sahneyi değiştir
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-            
-            System.out.println("Başarıyla çıkış yapıldı ve Login ekranına yönlendirildi.");
+
+            System.out.println("Başarıyla çıkış yapıldı.");
 
         } catch (IOException e) {
             e.printStackTrace();
-            System.err.println("HATA: Login ekranına geçiş yapılamadı: " + e.getMessage());
+            System.err.println("HATA: Login ekranına geçilemedi: " + e.getMessage());
         }
     }
 
     @FXML
     void profilimclick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/BerberProfilim.fxml"));
+            Parent root = loader.load();
 
+            Stage stage = (Stage) ((MenuItem) event.getSource())
+                    .getParentPopup().getOwnerWindow();
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+            System.out.println("Profilim sayfasına geçildi.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("HATA: BerberProfilimController.fxml yüklenemedi: " + e.getMessage());
+        }
     }
+
 
     @FXML
     void randevularimclick(ActionEvent event) {
-
+        // Randevular sayfası sonra eklenecek
     }
 
+
+    // === JAVA FX INITIALIZE ===
     @FXML
     void initialize() {
-        assert arabuton != null : "fx:id=\"arabuton\" was not injected: check your FXML file 'Berber1.fxml'.";
-        assert berber1isimtext != null : "fx:id=\"berber1isimtext\" was not injected: check your FXML file 'Berber1.fxml'.";
-        assert cikisyap != null : "fx:id=\"cikisyap\" was not injected: check your FXML file 'Berber1.fxml'.";
-        assert profilim != null : "fx:id=\"profilim\" was not injected: check your FXML file 'Berber1.fxml'.";
-        assert randevularim != null : "fx:id=\"randevularim\" was not injected: check your FXML file 'Berber1.fxml'.";
-        assert takvim != null : "fx:id=\"takvim\" was not injected: check your FXML file 'Berber1.fxml'.";
+
+        // HATA VEREN loadRandevu() çağrısı kaldırıldı.
+        // loadRandevu(); 
+
+        assert arabuton != null : "fx:id=\"arabuton\" was not injected.";
+        assert berber1isimtext != null : "fx:id=\"berber1isimtext\" was not injected.";
+        assert cikisyap != null : "fx:id=\"cikisyap\" was not injected.";
+        assert profilim != null : "fx:id=\"profilim\" was not injected.";
+        assert randevularim != null : "fx:id=\"randevularim\" was not injected.";
+        assert takvim != null : "fx:id=\"takvim\" was not injected.";
     }
 
 }

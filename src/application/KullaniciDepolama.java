@@ -75,7 +75,9 @@ public class KullaniciDepolama {
             e.printStackTrace();
         }
     }
-
+    public Kullanici getBas() {	
+        return bas;
+    }
     public Kullanici getKullanici(String kullaniciAdi) {
         Kullanici gecici = bas;
         while (gecici != null) {

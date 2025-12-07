@@ -10,7 +10,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-// Yönlendirme için gerekli kütüphaneler:
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -101,7 +100,23 @@ public class Berber3Controller {
 
     @FXML
     void profilimclick(ActionEvent event) {
-        // Profilim işlevi buraya gelecek
+        try {
+        	FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/BerberProfilim.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((MenuItem) event.getSource())
+                    .getParentPopup().getOwnerWindow();
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+            System.out.println("Profilim sayfasına geçildi.");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("HATA: BerberProfilimController.fxml yüklenemedi: " + e.getMessage());
+        }
     }
 
     @FXML

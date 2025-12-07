@@ -1,0 +1,16 @@
+/* 4. Sil Butonu (Kiremit Kırmızısı) */
+.btn-sil {
+    -fx-background-color: #C0392B; /* Kiremit Kırmızısı - Gold ile çok yakışır */
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.btn-sil:hover {
+    -fx-background-color: #E74C3C; /* Üzerine gelince açılır */
+}
+
+.btn-sil:pressed {
+    -fx-background-color: #962D22; /* Tıklayınca koyulaşır */
+}

@@ -8,7 +8,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,13 +16,19 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import java.io.IOException;
-import javafx.scene.control.Button; // Button sınıfını kullanmak için ekledik
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.Button;
+import java.time.LocalDate;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.time.format.DateTimeFormatter;
 
 public class RandevuController {
 
-    // ... (Mevcut Alanlar)
     @FXML private ResourceBundle resources;
     @FXML private URL location;
+
     @FXML private Text RandevuIsmi;
     @FXML private MenuItem cikisyap;
     @FXML private ToggleGroup personelgrup;
@@ -31,48 +36,36 @@ public class RandevuController {
     @FXML private DatePicker randevuTarihi;
     @FXML private Label randevuisimtext;
     @FXML private MenuItem randevularim;
-    
-    // Yeni Eklenen Alan: Randevu Onayla Butonu (FXML'den bağlı olmalı)
-    // Eğer FXML'de fx:id'si 'randevuOnaylaButton' olan bir butonunuz varsa.
-    @FXML private Button randevuOnaylaButton; 
 
-    // Yeni Eklenen Alan: Seçilen saati tutar
-    private String secilenSaat = null;
+    @FXML private Button randevuonaylabuton;
 
-    // ... (setRandevuIsmi ve setKullaniciAdi metotları aynı)
+    @FXML private Button saat9, saat10, saat11, saat12, saat13, saat14,
+                        saat15, saat16, saat17, saat18, saat19, saat20;
+
+    private String secilenSaat;
 
     public void setRandevuIsmi(String islemAdi) {
         RandevuIsmi.setText(islemAdi);
         RandevuIsmi.setAccessibleText(islemAdi);
     }
-    
+
     public void setKullaniciAdi(String adSoyad) {
         randevuisimtext.setText(adSoyad);
     }
-    
-    // ... (cikisyapclick metodu aynı)
 
     @FXML
     void cikisyapclick(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Login.fxml"));
             Parent root = loader.load();
-            
-            // MenuItem'ın bağlı olduğu pencereyi bulma yöntemi (daha güvenli)
-            Stage stage = (Stage) ((MenuItem)event.getSource()).getParentPopup().getOwnerWindow();
-            
-            // Eğer üstteki kod hata verirse, aşağıdaki yedeği kullanabilirsiniz:
-            // Stage stage = (Stage) randevuisimtext.getScene().getWindow();
-            
+            Stage stage = (Stage) randevuisimtext.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
-    // ... (randevuSayfasiAc metodu aynı)
-    
+
     public void randevuSayfasiAc(String kullaniciAdi) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Randevu.fxml"));
@@ -89,22 +82,66 @@ public class RandevuController {
 
     @FXML
     void randevuonaylabutonclick(ActionEvent event) {
-        // Randevu onaylama mantığı buraya gelecek
-        if (secilenSaat == null || randevuTarihi.getValue() == null) {
-            System.out.println("HATA: Lütfen tarih ve saat seçin.");
-            return;
+        try {
+            RadioButton secilenPersonel = (RadioButton) personelgrup.getSelectedToggle();
+            String personelAdi = (secilenPersonel != null) ? secilenPersonel.getAccessibleText() : "Seçilmedi";
+
+            LocalDate secilenTarih = randevuTarihi.getValue();
+            String tarihStr = (secilenTarih != null) ? secilenTarih.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) : "Seçilmedi";
+
+            String saatStr = (secilenSaat != null) ? secilenSaat : "Seçilmedi";
+
+            String hizmetAdi = (RandevuIsmi != null && RandevuIsmi.getText() != null) ? RandevuIsmi.getText() : "Seçilmedi";
+
+            System.out.println("Randevu Onaylandı:");
+            System.out.println("Hizmet: " + hizmetAdi);
+            System.out.println("Personel: " + personelAdi);
+            System.out.println("Tarih: " + tarihStr);
+            System.out.println("Saat: " + saatStr);
+
+            kaydetRandevu(randevuisimtext.getText(), hizmetAdi, personelAdi, tarihStr, saatStr);
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/AnaSayfa.fxml"));
+            Parent root = loader.load();
+
+            AnaSayfaController anaSayfaController = loader.getController();
+            anaSayfaController.setProfilText(randevuisimtext.getText());
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        
-        String tarih = randevuTarihi.getValue().toString();
-        // Örneğin: RandevuyuDepola(tarih, secilenSaat);
-        System.out.println("Randevu Onaylandı: Tarih: " + tarih + ", Saat: " + secilenSaat);
     }
-    
+
+    private void kaydetRandevu(String kullaniciAdi, String hizmet, String personel, String tarih, String saat) {
+        try {
+            File file = new File("randevular.txt");
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file, true)); // append mode
+            writer.write(kullaniciAdi+","
+                    + tarih+","
+                   +saat+","
+                  +hizmet+","
+                  + personel );
+            writer.newLine();
+            writer.close();
+            System.out.println("Randevu dosyaya kaydedildi.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @FXML
     void geributonclick(MouseEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/AnaSayfa.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AnaSayfa.fxml"));
             Parent root = loader.load();
+
+            AnaSayfaController anaSayfaController = loader.getController();
+            anaSayfaController.setProfilText(randevuisimtext.getText());
+
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
@@ -113,52 +150,30 @@ public class RandevuController {
             System.out.println("HATA: AnaSayfa.fxml yüklenemedi.");
         }
     }
-
     @FXML
     void saatTiklandi(ActionEvent event) {
-        // Tıklanan öğeyi Button olarak al
-        Button tiklananSaatButonu = (Button) event.getSource();
-
-        // Butonun üzerindeki metni (saat dilimini) al
-        String yeniSaat = tiklananSaatButonu.getText();
-        
-        // Eğer daha önce bir saat seçilmişse, eski butonu görsel olarak sıfırlama (isteğe bağlı)
-        // Eğer her saat butonu farklı bir ID'ye sahipse bu zor olabilir.
-        // FXML'de CSS sınıflarını veya ToggleButton kullanmak görsel geri bildirim için daha iyidir.
-
-        // Yeni saati kaydet ve görsel geri bildirim ver
-        secilenSaat = yeniSaat;
-        System.out.println("Seçilen randevu saati güncellendi: " + secilenSaat);
-        
-        // Butonun seçili olduğunu görsel olarak belirtmek için CSS sınıfı ekleyebiliriz (Örn: tiklananSaatButonu.setStyle("-fx-background-color: #4CAF50;");)
-
-        // Randevu onayı için gerekli tüm verilerin olup olmadığını kontrol et
-        if (randevuTarihi.getValue() != null && secilenSaat != null && randevuOnaylaButton != null) {
-             randevuOnaylaButton.setDisable(false);
-        }
-    } 
-    
+        Button tiklananButon = (Button) event.getSource();
+        this.secilenSaat = tiklananButon.getText();
+        System.out.println("Seçilen saat: " + this.secilenSaat);
+    }
     @FXML
     void profilimclick(ActionEvent event) {
-    }
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Profilim.fxml"));
+            Parent root = loader.load();
 
+            ProfilimController profilimController = loader.getController();
+            profilimController.setKullaniciAdi(randevuisimtext.getText());
+            Stage stage = (Stage) randevuisimtext.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("HATA: Profilim.fxml yüklenemedi.");
+        }
+    }
     @FXML
     void randevularimclick(ActionEvent event) {
+        System.out.println("Randevularım menüsü tıklandı.");
     }
-
-  
-
-
-
-    @FXML
-    void initialize() {
-        assert RandevuIsmi != null : "fx:id=\"RandevuIsmi\" was not injected: check your FXML file 'Randevu.fxml'.";
-        assert cikisyap != null : "fx:id=\"cikisyap\" was not injected: check your FXML file 'Randevu.fxml'.";
-        assert personelgrup != null : "fx:id=\"personelgrup\" was not injected: check your FXML file 'Randevu.fxml'.";
-        assert profilim != null : "fx:id=\"profilim\" was not injected: check your FXML file 'Randevu.fxml'.";
-        assert randevuTarihi != null : "fx:id=\"randevuTarihi\" was not injected: check your FXML file 'Randevu.fxml'.";
-        assert randevuisimtext != null : "fx:id=\"randevuisimtext\" was not injected: check your FXML file 'Randevu.fxml'.";
-        assert randevularim != null : "fx:id=\"randevularim\" was not injected: check your FXML file 'Randevu.fxml'.";
-    }
-
 }
