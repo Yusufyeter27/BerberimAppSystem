@@ -1,8 +1,5 @@
-/* Genel Arka Plan - Mat Gri */
 
 
-/* Ortadaki Beyaz Panel (Login Formunun olduğu alan) */
-/* Bunu Scene Builder'da formun olduğu ana panele (AnchorPane veya Pane) vereceğiz */
 .login-card {
     -fx-background-color: rgba(255, 255, 255, 0.80);
 -fx-background-radius: 20;

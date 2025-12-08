@@ -14,272 +14,282 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="600.0" stylesheets="@randevu.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RandevuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RandevuController">
    <children>
-      <ImageView fitHeight="357.0" fitWidth="600.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <image>
-            <Image url="@../../../../PROJE%20RESİMLERİ/l.jpg" />
-         </image>
-      </ImageView>
-      <AnchorPane layoutX="51.0" layoutY="7.0" prefHeight="272.0" prefWidth="521.0" style="-fx-background-color: white;" styleClass="arkaPlan" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="15.0">
+      <StackPane layoutY="0.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <AnchorPane layoutX="-1.0" prefHeight="30.0" prefWidth="502.0" styleClass="ustPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../PROJE%20RESİMLERİ/be.jpeg" />
+               </image>
+            </ImageView>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="600.0" stylesheets="@randevu.css" StackPane.alignment="CENTER">
                <children>
-                  <Label layoutX="324.0" layoutY="8.0" />
-                  <Label fx:id="randevuisimtext" layoutX="355.0" layoutY="2.0" prefHeight="15.0" prefWidth="67.0" text="Yusuf Yeter" AnchorPane.rightAnchor="70.0" />
-                  <Label layoutX="346.0" layoutY="21.0" text="HOŞ GELDİNİZ" AnchorPane.rightAnchor="60.0" />
-                  <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="306.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="312.0" AnchorPane.rightAnchor="155.0" AnchorPane.topAnchor="0.0">
-                     <image>
-                        <Image url="@../../../../../Downloads/kişiikonu-removebg-preview.png" />
-                     </image>
-                  </ImageView>
-                  <Text layoutX="85.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BERBERİM" wrappingWidth="77.03515625" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="9.47021484375">
-                     <font>
-                        <Font name="Apple Chancery" size="13.0" />
-                     </font>
-                     <effect>
-                        <ColorAdjust />
-                     </effect>
-                  </Text>
-                  <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
-                     <image>
-                        <Image url="@../../../../PROJE%20RESİMLERİ/ikon3-removebg-preview.png" />
-                     </image>
-                     <effect>
-                        <ColorAdjust />
-                     </effect>
-                  </ImageView>
-                  <MenuButton layoutX="444.0" layoutY="6.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="40.0">
-                     <items>
-                        <MenuItem fx:id="profilim" mnemonicParsing="false" onAction="#profilimclick" text="Profilim">
-                           <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <AnchorPane layoutX="51.0" layoutY="7.0" prefHeight="272.0" prefWidth="521.0" style="-fx-background-color: white;" styleClass="arkaPlan" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="15.0">
+                     <children>
+                        <AnchorPane layoutX="-1.0" prefHeight="30.0" prefWidth="502.0" styleClass="ustPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label layoutX="324.0" layoutY="8.0" />
+                              <Label fx:id="randevuisimtext" layoutX="355.0" layoutY="2.0" prefHeight="15.0" prefWidth="67.0" text="Yusuf Yeter" AnchorPane.rightAnchor="70.0" />
+                              <Label layoutX="346.0" layoutY="21.0" text="HOŞ GELDİNİZ" AnchorPane.rightAnchor="60.0" />
+                              <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="306.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="312.0" AnchorPane.rightAnchor="155.0" AnchorPane.topAnchor="0.0">
                                  <image>
-                                    <Image url="@../../../../PROJE%20RESİMLERİ/kişiikonu-removebg-preview.png" />
+                                    <Image url="@../../../../../Downloads/kişiikonu-removebg-preview.png" />
                                  </image>
                               </ImageView>
-                           </graphic>
-                        </MenuItem>
-                        <MenuItem fx:id="randevularim" mnemonicParsing="false" onAction="#randevularimclick" text="Randevularım">
-                           <graphic>
-                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <Text layoutX="85.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BERBERİM" wrappingWidth="77.03515625" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="9.47021484375">
+                                 <font>
+                                    <Font name="Apple Chancery" size="13.0" />
+                                 </font>
+                                 <effect>
+                                    <ColorAdjust />
+                                 </effect>
+                              </Text>
+                              <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
                                  <image>
-                                    <Image url="@../../../../../Downloads/randevuikonu-removebg-preview.png" />
+                                    <Image url="@../../../../PROJE%20RESİMLERİ/ikon3-removebg-preview.png" />
+                                 </image>
+                                 <effect>
+                                    <ColorAdjust />
+                                 </effect>
+                              </ImageView>
+                              <MenuButton layoutX="444.0" layoutY="6.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="40.0">
+                                 <items>
+                                    <MenuItem fx:id="profilim" mnemonicParsing="false" onAction="#profilimclick" text="Profilim">
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../PROJE%20RESİMLERİ/kişiikonu-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </MenuItem>
+                                    <MenuItem fx:id="randevularim" mnemonicParsing="false" onAction="#randevularimclick" text="Randevularım">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Downloads/randevuikonu-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </MenuItem>
+                                    <MenuItem fx:id="cikisyap" mnemonicParsing="false" onAction="#cikisyapclick" text="Çıkış Yap">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Downloads/çıkışikonu-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </MenuItem>
+                                 </items>
+                                 <styleClass>
+                                    <String fx:value="arrow-button" />
+                                    <String fx:value="arrow" />
+                                    <String fx:value="menu-button" />
+                                 </styleClass>
+                              </MenuButton>
+                              <ImageView fx:id="geributon" fitHeight="43.0" fitWidth="37.0" layoutX="16.0" layoutY="-3.0" onMouseClicked="#geributonclick" pickOnBounds="true" preserveRatio="true" styleClass="back-btn-style" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0">
+                                 <image>
+                                    <Image url="@../../../../../Downloads/geriçıkışbuton-removebg-preview.png" />
                                  </image>
                               </ImageView>
-                           </graphic>
-                        </MenuItem>
-                        <MenuItem fx:id="cikisyap" mnemonicParsing="false" onAction="#cikisyapclick" text="Çıkış Yap">
-                           <graphic>
-                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../../Downloads/çıkışikonu-removebg-preview.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
-                     </items>
-                     <styleClass>
-                        <String fx:value="arrow-button" />
-                        <String fx:value="arrow" />
-                        <String fx:value="menu-button" />
-                     </styleClass>
-                  </MenuButton>
-                  <ImageView fx:id="geributon" fitHeight="43.0" fitWidth="37.0" layoutX="16.0" layoutY="-3.0" onMouseClicked="#geributonclick" pickOnBounds="true" preserveRatio="true" styleClass="back-btn-style" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0">
-                     <image>
-                        <Image url="@../../../../../Downloads/geriçıkışbuton-removebg-preview.png" />
-                     </image>
-                  </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="12.0" layoutY="47.0" styleClass="circle-label" text="1" AnchorPane.leftAnchor="11.0" />
+                        <Text layoutX="41.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hizmet Seçimi">
+                           <font>
+                              <Font name="Apple Chancery" size="15.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="11.0" layoutY="87.0" styleClass="circle-label" text="2" AnchorPane.leftAnchor="11.0" />
+                        <Label layoutX="9.0" layoutY="139.0" styleClass="circle-label" text="3" AnchorPane.leftAnchor="9.0" />
+                        <Label layoutX="11.0" layoutY="209.0" styleClass="circle-label" text="4" AnchorPane.leftAnchor="11.0" />
+                        <Text layoutX="40.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personel Seçimi">
+                           <font>
+                              <Font name="Apple Chancery" size="15.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="36.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tarih Seçimi">
+                           <font>
+                              <Font name="Apple Chancery" size="15.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="40.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saat Seçimi">
+                           <font>
+                              <Font name="Apple Chancery" size="15.0" />
+                           </font>
+                        </Text>
+                        <DatePicker fx:id="randevuTarihi" layoutX="203.0" layoutY="138.0" prefWidth="200.0" promptText="Randevu Tarihi Seçiniz" AnchorPane.leftAnchor="216.0">
+                           <styleClass>
+                              <String fx:value="date-picker" />
+                              <String fx:value="date-picker-popup" />
+                           </styleClass>
+                        </DatePicker>
+                        <HBox layoutX="263.5" layoutY="110.0" prefHeight="18.0" prefWidth="226.0" styleClass="ozel-radio" AnchorPane.leftAnchor="216.0">
+                           <children>
+                              <RadioButton accessibleText="Yusuf Yeter" mnemonicParsing="false" prefHeight="18.0" prefWidth="77.0" styleClass="fancy-radio" text="Yusuf Yeter   ">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="personelgrup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton accessibleText="Emre Turğut" mnemonicParsing="false" prefHeight="18.0" prefWidth="80.0" styleClass="fancy-radio" text="Emre Turğut  " toggleGroup="$personelgrup">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton accessibleText="Kadir Atan" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="12.0" prefWidth="60.0" styleClass="fancy-radio" text="Kadir Atan" toggleGroup="$personelgrup">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </HBox>
+                        <TilePane hgap="4.0" layoutX="216.0" layoutY="188.0" prefColumns="8" prefHeight="81.0" prefRows="8" prefWidth="220.0" styleClass="saat-butonu" vgap="4.0" AnchorPane.leftAnchor="216.0" AnchorPane.topAnchor="185.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <children>
+                              <Button fx:id="saat9" accessibleText="09.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="09.00">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="saat-butonu" />
+                                    <String fx:value="saat-dolu" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="saat10" accessibleText="10.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="19.0" prefWidth="36.0" text="10.00">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="saat-butonu" />
+                                    <String fx:value="saat-dolu" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="saat11" accessibleText="11.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="11.00">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="saat-butonu" />
+                                    <String fx:value="saat-dolu" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="saat12" accessibleText="12.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="12.00">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="saat-butonu" />
+                                    <String fx:value="saat-dolu" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="saat13" accessibleText="13.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="37.0" text="13.00">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="saat-butonu" />
+                                    <String fx:value="saat-dolu" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="saat14" accessibleText="14.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="37.0" text="14.00">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="saat-butonu" />
+                                    <String fx:value="saat-dolu" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="saat15" accessibleText="15.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="15.00">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="saat-butonu" />
+                                    <String fx:value="saat-dolu" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="saat16" accessibleText="16.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="16.00">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="saat-butonu" />
+                                    <String fx:value="saat-dolu" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="saat17" accessibleText="17.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="21.0" prefWidth="36.0" text="17.00">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="saat-butonu" />
+                                    <String fx:value="saat-dolu" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="saat18" accessibleText="18.00" mnemonicParsing="false" onAction="#saatTiklandi" text="18.00">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="saat-butonu" />
+                                    <String fx:value="saat-dolu" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="saat19" accessibleText="19.00" mnemonicParsing="false" onAction="#saatTiklandi" text="19.00">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="saat-butonu" />
+                                    <String fx:value="saat-dolu" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="saat20" accessibleText="20.00" mnemonicParsing="false" onAction="#saatTiklandi" text="20.00">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="saat-butonu" />
+                                    <String fx:value="saat-dolu" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </TilePane>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="285.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="230.0">
+                           <image>
+                              <Image url="@../../../../../Downloads/kişiberberikonu-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="308.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="188.0" AnchorPane.leftAnchor="310.0">
+                           <image>
+                              <Image url="@../../../../../Downloads/kişiberberikonu-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="420.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="395.0">
+                           <image>
+                              <Image url="@../../../../../Downloads/kişiberberikonu-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="RandevuIsmi" layoutX="205.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hizmet seçimi" AnchorPane.leftAnchor="216.0" />
+                        <Button fx:id="randevuonaylabuton" layoutX="389.0" layoutY="273.0" mnemonicParsing="false" onAction="#randevuonaylabutonclick" prefHeight="25.0" prefWidth="88.0" styleClass="confirm-button" text="Onayla" />
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
-            <Label layoutX="12.0" layoutY="47.0" styleClass="circle-label" text="1" AnchorPane.leftAnchor="11.0" />
-            <Text layoutX="41.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hizmet Seçimi">
-               <font>
-                  <Font name="Apple Chancery" size="15.0" />
-               </font>
-            </Text>
-            <Label layoutX="11.0" layoutY="87.0" styleClass="circle-label" text="2" AnchorPane.leftAnchor="11.0" />
-            <Label layoutX="9.0" layoutY="139.0" styleClass="circle-label" text="3" AnchorPane.leftAnchor="9.0" />
-            <Label layoutX="11.0" layoutY="209.0" styleClass="circle-label" text="4" AnchorPane.leftAnchor="11.0" />
-            <Text layoutX="40.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personel Seçimi">
-               <font>
-                  <Font name="Apple Chancery" size="15.0" />
-               </font>
-            </Text>
-            <Text layoutX="36.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tarih Seçimi">
-               <font>
-                  <Font name="Apple Chancery" size="15.0" />
-               </font>
-            </Text>
-            <Text layoutX="40.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saat Seçimi">
-               <font>
-                  <Font name="Apple Chancery" size="15.0" />
-               </font>
-            </Text>
-            <DatePicker fx:id="randevuTarihi" layoutX="203.0" layoutY="138.0" prefWidth="200.0" promptText="Randevu Tarihi Seçiniz" AnchorPane.leftAnchor="216.0">
-               <styleClass>
-                  <String fx:value="date-picker" />
-                  <String fx:value="date-picker-popup" />
-               </styleClass></DatePicker>
-            <HBox layoutX="263.5" layoutY="110.0" prefHeight="18.0" prefWidth="226.0" styleClass="ozel-radio" AnchorPane.leftAnchor="216.0">
-               <children>
-                  <RadioButton accessibleText="Yusuf Yeter" mnemonicParsing="false" prefHeight="18.0" prefWidth="77.0" styleClass="fancy-radio" text="Yusuf Yeter   ">
-                     <font>
-                        <Font size="9.0" />
-                     </font>
-                     <toggleGroup>
-                        <ToggleGroup fx:id="personelgrup" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton accessibleText="Emre Turğut" mnemonicParsing="false" prefHeight="18.0" prefWidth="80.0" styleClass="fancy-radio" text="Emre Turğut  " toggleGroup="$personelgrup">
-                     <font>
-                        <Font size="9.0" />
-                     </font>
-                  </RadioButton>
-                  <RadioButton accessibleText="Kadir Atan" alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="12.0" prefWidth="60.0" styleClass="fancy-radio" text="Kadir Atan" toggleGroup="$personelgrup">
-                     <font>
-                        <Font size="9.0" />
-                     </font>
-                  </RadioButton>
-               </children>
-            </HBox>
-            <TilePane hgap="4.0" layoutX="216.0" layoutY="188.0" prefColumns="8" prefHeight="81.0" prefRows="8" prefWidth="220.0" styleClass="saat-butonu" vgap="4.0" AnchorPane.leftAnchor="216.0" AnchorPane.topAnchor="185.0">
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </padding>
-               <children>
-                  <Button fx:id="saat9" accessibleText="09.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="09.00">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="saat-butonu" />
-                        <String fx:value="saat-dolu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="saat10" accessibleText="10.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="19.0" prefWidth="36.0" text="10.00">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="saat-butonu" />
-                        <String fx:value="saat-dolu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="saat11" accessibleText="11.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="11.00">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="saat-butonu" />
-                        <String fx:value="saat-dolu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="saat12" accessibleText="12.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="12.00">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="saat-butonu" />
-                        <String fx:value="saat-dolu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="saat13" accessibleText="13.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="37.0" text="13.00">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="saat-butonu" />
-                        <String fx:value="saat-dolu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="saat14" accessibleText="14.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="37.0" text="14.00">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="saat-butonu" />
-                        <String fx:value="saat-dolu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="saat15" accessibleText="15.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="15.00">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="saat-butonu" />
-                        <String fx:value="saat-dolu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="saat16" accessibleText="16.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="20.0" prefWidth="36.0" text="16.00">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="saat-butonu" />
-                        <String fx:value="saat-dolu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="saat17" accessibleText="17.00" mnemonicParsing="false" onAction="#saatTiklandi" prefHeight="21.0" prefWidth="36.0" text="17.00">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="saat-butonu" />
-                        <String fx:value="saat-dolu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="saat18" accessibleText="18.00" mnemonicParsing="false" onAction="#saatTiklandi" text="18.00">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="saat-butonu" />
-                        <String fx:value="saat-dolu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="saat19" accessibleText="19.00" mnemonicParsing="false" onAction="#saatTiklandi" text="19.00">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="saat-butonu" />
-                        <String fx:value="saat-dolu" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="saat20" accessibleText="20.00" mnemonicParsing="false" onAction="#saatTiklandi" text="20.00">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="saat-butonu" />
-                        <String fx:value="saat-dolu" />
-                     </styleClass>
-                  </Button>
-               </children>
-            </TilePane>
-            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="285.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="230.0">
-               <image>
-                  <Image url="@../../../../../Downloads/kişiberberikonu-removebg-preview.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="308.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="188.0" AnchorPane.leftAnchor="310.0">
-               <image>
-                  <Image url="@../../../../../Downloads/kişiberberikonu-removebg-preview.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="41.0" fitWidth="41.0" layoutX="420.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="395.0">
-               <image>
-                  <Image url="@../../../../../Downloads/kişiberberikonu-removebg-preview.png" />
-               </image>
-            </ImageView>
-            <Text fx:id="RandevuIsmi" layoutX="205.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hizmet seçimi" AnchorPane.leftAnchor="216.0" />
-            <Button fx:id="randevuonaylabuton" layoutX="389.0" layoutY="273.0" mnemonicParsing="false" onAction="#randevuonaylabutonclick" prefHeight="25.0" prefWidth="88.0" styleClass="confirm-button" text="Onayla" />
          </children>
-      </AnchorPane>
+      </StackPane>
    </children>
 </AnchorPane>

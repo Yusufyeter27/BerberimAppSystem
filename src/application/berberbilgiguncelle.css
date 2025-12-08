@@ -1,0 +1,88 @@
+.ustPane{
+	-fx-background-color: linear-gradient(to right, #C19A6B, #E6C288); /* Hafif degrade geçişli */
+-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+	-fx-background-radius: 20;
+}
+.menu-button {
+    -fx-padding: 0.2em 0.2em; 
+    -fx-background-color:linear-gradient(to right, #C19A6B, #E6C288)
+}
+.arkaPlan{
+   -fx-background-color: #f2f2f2;
+-fx-background-radius: 20;
+-fx-border-color: rgba(255, 255, 255, 0.60);
+-fx-border-radius: 20;
+-fx-border-width: 1.5;
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 5);}
+.back-btn-style {
+    /* Arka plan şeffaf kalsın ki zemin rengi görünsün */
+    -fx-background-color: transparent; 
+    
+    /* İkon rengi (Koyu Gri - Antrasit) */
+    -fx-text-fill: #2D2D2D; 
+    
+    /* Hover ve Pressed efektinin yuvarlak çıkması için */
+    -fx-background-radius: 50%; 
+    
+    /* Geçişlerin yumuşak olması için (JavaFX CSS'de her zaman çalışmaz ama eklemekte fayda var) */
+    -fx-cursor: hand;
+}
+
+/* 2. Mouse ile Üzerine Gelince (Hover) */
+.back-btn-style:hover {
+    /* Hafif bir gölge gibi arka plan belirsin */
+    -fx-background-color: rgba(0, 0, 0, 0.05); 
+    
+    /* İkon rengi biraz daha koyulaşsın */
+    -fx-text-fill: #000000;
+    
+    /* Hafifçe büyüsün */
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+/* 3. Tıklandığı An (Pressed - İstediğin Efekt) */
+.back-btn-style:pressed {
+    /* Tıklayınca arka plan biraz daha belirginleşsin */
+    -fx-background-color: rgba(0, 0, 0, 0.15); 
+    
+    /* İÇE GÖÇME EFEKTİ: Butonu küçültüyoruz */
+    -fx-scale-x: 0.90; 
+    -fx-scale-y: 0.90;
+    
+    /* İkon rengi değişebilir (Örn: Logodaki kahve tonu olabilir veya siyah kalabilir) */
+    -fx-text-fill: #3E2723; 
+    
+    /* Hafif aşağı kayma hissi (Mekanik buton hissi verir) */
+    -fx-translate-y: 2px;
+}/* 1. ONAYLA BUTONU (Ana Aksiyon) */
+.onayla-btn {
+    -fx-background-color: #C5A065; /* Başlıktaki Gold Rengi */
+    -fx-text-fill: #ffffff;         /* Yazı Beyaz */
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 20;      /* Yuvarlatılmış modern köşeler */
+    -fx-cursor: hand;
+    -fx-pref-width: 100px;          /* Buton genişliği sabit olsun */
+}
+
+/* Üzerine gelince (Hover) rengi biraz koyulaşsın */
+.onayla-btn:hover {
+    -fx-background-color: #a8854d; 
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 8, 0, 0, 2);
+}
+
+/* 2. FORM KUTULARI (Daha kibar ve standart) */
+.form-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #bdc3c7; /* İnce gri çerçeve */
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5;
+    -fx-pref-width: 100px; /* Hepsini aynı genişliğe zorlar */
+}
+
+.form-field:focused {
+    -fx-border-color: #C5A065; /* Tıklayınca Gold çerçeve olsun */
+    -fx-background-color: #fffcf5; /* Tıklayınca çok hafif krem zemin */
+}

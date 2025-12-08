@@ -93,74 +93,28 @@
 }
 
 /* TABLEVIEW */
-.table-view {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #c8a763;
-    -fx-border-width: 2px;
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
-    -fx-table-cell-border-color: transparent;
+/* HBox Ayarları (Zemin) */
+.tablo-baslik {
+    -fx-background-color: #3E2723; /* Koyu Kahverengi Zemin */
+    -fx-background-radius: 5px;
+    -fx-padding: 0px;              /* Çizgiler tam otursun diye padding'i sıfırladık */
 }
 
-/* HEADER ARKA PLAN - griyi kaldırıyoruz */
-.table-view .column-header-background {
-    -fx-background-color: linear-gradient(to bottom, #f2d28a, #c9a056);
-    -fx-background-radius: 10 10 0 0;
-    -fx-padding: 3;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 8, 0.3, 0, 2);
-}
-
-/* Bu satır GRI HEADER alanını tamamen yok eder */
-.table-view .column-header-background .filler,
-.table-view .show-hide-columns-button {
-    -fx-background-color: transparent;
-}
-
-/* HEADER LABEL */
-.table-view .column-header,
-.table-view .column-header .label {
-    -fx-background-color: transparent;
-    -fx-font-size: 10px;
+/* Label Ayarları (Yazılar ve Çizgiler) */
+.tablo-baslik .label {
+    -fx-text-fill: #FFF8E1;        /* Krem rengi yazı */
     -fx-font-weight: bold;
-    -fx-text-fill: #4e3a25;
-}
+    -fx-alignment: CENTER;
+    
+    /* İSTEDİĞİN GENİŞLİK AYARI */
+    -fx-min-width: 110px;
+    -fx-pref-width: 110px;
+    -fx-max-width: 110px;
 
-/* SATIRLAR */
-.table-row-cell {
-    -fx-background-color: #ffffff;
-    -fx-font-size: 10px;
-    -fx-text-fill: #3a2b19;
-    -fx-padding: 5;
-}
-
-/* Alternatif satır */
-.table-row-cell:odd {
-    -fx-background-color: #f9f3df;
-}
-
-/* Hover */
-.table-row-cell:hover {
-    -fx-background-color: #edd79b;
-    -fx-cursor: hand;
-}
-
-/* Seçili satır */
-.table-row-cell:selected {
-    -fx-background-color: linear-gradient(to right, #8a6a3d, #c7a15a);
-    -fx-text-fill: white !important;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0.3, 0, 2);
-}/* Header sütunlarının arasına çizgi */
-.table-view .column-header,
-.table-view .column-header-background {
-    -fx-border-color: #b3955a;
-    -fx-border-width: 0 1px 0 0; /* sağ tarafa ince çizgi */
-}
-
-/* Satır hücreleri arasına çizgi */
-.table-cell {
-    -fx-border-color: #d9c28b; /* çizgi tonu */
-    -fx-border-width: 0 1px 0 0; /* sadece sağ taraf çizilir */
-    -fx-padding: 5;
+    /* ARALARA ÇİZİK (Sadece sağ tarafa border veriyoruz) */
+    /* Sırasıyla: Üst - Sağ - Alt - Sol */
+    -fx-border-color: transparent #D4AF37 transparent transparent; 
+    -fx-border-width: 0 1 0 0;     /* Sadece sağdaki çizgi 1px kalınlığında olsun */
 }.back-btn-style {
     /* Arka plan şeffaf kalsın ki zemin rengi görünsün */
     -fx-background-color: transparent; 

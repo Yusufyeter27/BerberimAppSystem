@@ -34,6 +34,78 @@ public class Berber2Controller {
     private Label berber2isimtext;
 
     @FXML
+    private Label labelhizmet;
+
+    @FXML
+    private Label labelhizmet1;
+
+    @FXML
+    private Label labelhizmet2;
+
+    @FXML
+    private Label labelhizmet3;
+
+    @FXML
+    private Label labelhizmet4;
+
+    @FXML
+    private Label labelhizmet5;
+
+    @FXML
+    private Label labelmusteri;
+
+    @FXML
+    private Label labelmusteri1;
+
+    @FXML
+    private Label labelmusteri2;
+
+    @FXML
+    private Label labelmusteri3;
+
+    @FXML
+    private Label labelmusteri4;
+
+    @FXML
+    private Label labelmusteri5;
+
+    @FXML
+    private Label labelsaat;
+
+    @FXML
+    private Label labelsaat1;
+
+    @FXML
+    private Label labelsaat2;
+
+    @FXML
+    private Label labelsaat3;
+
+    @FXML
+    private Label labelsaat4;
+
+    @FXML
+    private Label labelsaat5;
+
+    @FXML
+    private Label labeltarih;
+
+    @FXML
+    private Label labeltarih1;
+
+    @FXML
+    private Label labeltarih2;
+
+    @FXML
+    private Label labeltarih3;
+
+    @FXML
+    private Label labeltarih4;
+
+    @FXML
+    private Label labeltarih5;
+
+    @FXML
     private MenuItem cikisyap;
 
     @FXML

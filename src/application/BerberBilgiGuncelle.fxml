@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BerberProfilimController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BerberBilgiGuncelleController">
    <children>
       <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
@@ -22,15 +24,10 @@
                   <Image url="@../../../../PROJE%20RESİMLERİ/be.jpeg" />
                </image>
             </ImageView>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="304.0" prefWidth="544.0" stylesheets="@profilim.css" StackPane.alignment="CENTER">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@bilgiguncelle.css" StackPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="98.0" layoutY="72.0" prefHeight="165.0" prefWidth="320.0" style="-fx-background-color: white;" styleClass="arkaPlan" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="98.0" AnchorPane.rightAnchor="126.0" AnchorPane.topAnchor="72.0">
+                  <AnchorPane layoutX="87.0" layoutY="57.0" prefHeight="232.0" prefWidth="383.0" style="-fx-background-color: white;" styleClass="arkaPlan">
                      <children>
-                        <AnchorPane layoutX="1.5" layoutY="55.5" prefHeight="32.0" prefWidth="455.0" styleClass="ustPane" AnchorPane.bottomAnchor="155.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="54.0">
-                           <children>
-                              <Label layoutX="324.0" layoutY="8.0" />
-                           </children>
-                        </AnchorPane>
                         <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="9.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" styleClass="user-icon">
                            <image>
                               <Image url="@../../../../../Downloads/kişiikonu-removebg-preview.png" />
@@ -51,41 +48,31 @@
                               <Font size="18.0" />
                            </font>
                         </Text>
-                        <Button fx:id="berberbilgilerim" layoutX="184.0" layoutY="130.0" mnemonicParsing="false" onAction="#berberbilgilerimclick" styleClass="guncelle-btn" text="Bilgilerimi Güncelle" />
-                        <Label fx:id="berberprofilimisim" layoutX="109.0" layoutY="44.0" styleClass="etiket-deger" text="Yusuf" AnchorPane.leftAnchor="109.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="berberprofilimsoyad" layoutX="133.0" layoutY="72.0" styleClass="etiket-deger" text="Yeter">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="berberprofilimkullanici" layoutX="183.0" layoutY="98.0" styleClass="etiket-deger" text="aa">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
+                        <Button fx:id="onaylabuton" layoutX="307.0" layoutY="202.0" mnemonicParsing="false" onAction="#onaylabutonclick" text="Onayla">
+                           <styleClass>
+                              <String fx:value="guncelle-btn" />
+                              <String fx:value="onayla-btn" />
+                           </styleClass>
+                        </Button>
                         <AnchorPane layoutX="-72.0" layoutY="4.0" prefHeight="40.0" prefWidth="492.0" styleClass="ustPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <Label layoutX="324.0" layoutY="8.0" />
-                              <Label fx:id="randevuisimtext" layoutX="203.0" layoutY="7.0" prefHeight="15.0" prefWidth="67.0" text="Yusuf Yeter" AnchorPane.rightAnchor="47.0">
+                              <Label fx:id="randevuisimtext" layoutX="257.0" layoutY="7.0" prefHeight="15.0" prefWidth="67.0" text="Yusuf Yeter" AnchorPane.rightAnchor="59.0">
                                  <font>
                                     <Font size="10.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="191.0" layoutY="19.0" prefWidth="70.0" text="HOŞ GELDİNİZ" AnchorPane.rightAnchor="56.0">
+                              <Label layoutX="248.0" layoutY="20.0" prefWidth="70.0" text="HOŞ GELDİNİZ" AnchorPane.rightAnchor="65.0">
                                  <font>
                                     <Font size="10.0" />
                                  </font>
                               </Label>
-                              <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="152.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="152.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="1.0">
+                              <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="251.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-3.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="132.0" AnchorPane.topAnchor="3.0">
                                  <image>
                                     <Image url="@../../../../../Downloads/kişiikonu-removebg-preview.png" />
                                  </image>
                               </ImageView>
-                              <Text layoutX="69.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BERBERİM" wrappingWidth="77.03515625" AnchorPane.leftAnchor="69.0" AnchorPane.topAnchor="11.8232421875">
+                              <Text layoutX="77.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BERBERİM" wrappingWidth="77.03515625" AnchorPane.leftAnchor="77.0" AnchorPane.topAnchor="12.47021484375">
                                  <font>
                                     <Font name="Apple Chancery" size="13.0" />
                                  </font>
@@ -93,7 +80,7 @@
                                     <ColorAdjust />
                                  </effect>
                               </Text>
-                              <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="36.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="3.0">
+                              <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="38.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="4.0">
                                  <image>
                                     <Image url="@../../../../PROJE%20RESİMLERİ/ikon3-removebg-preview.png" />
                                  </image>
@@ -101,22 +88,13 @@
                                     <ColorAdjust />
                                  </effect>
                               </ImageView>
-                              <MenuButton layoutX="268.0" layoutY="3.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="40.0">
+                              <MenuButton layoutX="365.0" layoutY="6.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="40.0">
                                  <items>
                                     <MenuItem fx:id="profilim" mnemonicParsing="false" onAction="#profilimclick" text="Profilim">
                                        <graphic>
                                           <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../../../PROJE%20RESİMLERİ/kişiikonu-removebg-preview.png" />
-                                             </image>
-                                          </ImageView>
-                                       </graphic>
-                                    </MenuItem>
-                                    <MenuItem fx:id="randevularim" mnemonicParsing="false" onAction="#randevularimclick" text="Randevularım">
-                                       <graphic>
-                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../../../../Downloads/randevuikonu-removebg-preview.png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -137,13 +115,48 @@
                                     <String fx:value="menu-button" />
                                  </styleClass>
                               </MenuButton>
-                              <ImageView fx:id="geributon" fitHeight="43.0" fitWidth="37.0" layoutX="3.0" layoutY="2.0" onMouseClicked="#geributonclick" pickOnBounds="true" preserveRatio="true" styleClass="back-btn-style" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="277.0" AnchorPane.topAnchor="2.0">
+                              <ImageView fx:id="geributon" fitHeight="43.0" fitWidth="37.0" layoutX="4.0" layoutY="4.0" onMouseClicked="#geributonclick" pickOnBounds="true" preserveRatio="true" styleClass="back-btn-style" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="386.0" AnchorPane.topAnchor="4.0">
                                  <image>
                                     <Image url="@../../../../../Downloads/geriçıkışbuton-removebg-preview.png" />
                                  </image>
                               </ImageView>
                            </children>
                         </AnchorPane>
+                        <TextField fx:id="adguncelle" layoutX="105.0" layoutY="45.0" onAction="#adguncelleclick" prefHeight="20.0" prefWidth="85.0" promptText="Adınızı Giriniz" styleClass="form-field" AnchorPane.bottomAnchor="167.0" AnchorPane.leftAnchor="110.0" AnchorPane.topAnchor="45.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="soyadguncelle" layoutX="132.0" layoutY="75.0" onAction="#soyadguncelleclick" prefHeight="20.0" prefWidth="85.0" promptText="Soyadınızı Giriniz" styleClass="form-field">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="kullaniciguncelle" layoutX="175.0" layoutY="102.0" onAction="#kullaniciguncelleclick" prefHeight="20.0" prefWidth="99.0" promptText="Kullanıcı Adı Giriniz" styleClass="form-field">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="72.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="etiket-sabit" text="Şifre :" AnchorPane.leftAnchor="70.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="68.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="etiket-sabit" text="Şifre Tekrar :" AnchorPane.leftAnchor="70.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <PasswordField fx:id="sifreguncelle" layoutX="119.0" layoutY="131.0" onAction="#sifreguncelleclick" prefHeight="0.0" prefWidth="100.0" promptText="Şifrenizi Giriniz" styleClass="form-field">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </PasswordField>
+                        <PasswordField fx:id="sifreguncelle2" layoutX="177.0" layoutY="158.0" onAction="#sifreguncelle2click" prefHeight="0.0" prefWidth="100.0" promptText="Şifreyi Tekrar Giriniz" styleClass="form-field">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </PasswordField>
                      </children>
                   </AnchorPane>
                </children>

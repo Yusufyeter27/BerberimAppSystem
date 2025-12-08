@@ -12,296 +12,312 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="600.0" stylesheets="@randevularim.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RandevularimController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RandevularimController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="600.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <image>
-            <Image url="@../../../../PROJE%20RESİMLERİ/l.jpg" />
-         </image>
-      </ImageView>
-      <AnchorPane layoutX="23.0" layoutY="27.0" prefHeight="294.0" prefWidth="551.0" style="-fx-background-color: white;" styleClass="arkaPlan" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="20.0">
+      <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <AnchorPane layoutX="21.0" layoutY="12.0" prefHeight="30.0" prefWidth="502.0" styleClass="ustPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../PROJE%20RESİMLERİ/be.jpeg" />
+               </image>
+            </ImageView>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@randevularim.css" StackPane.alignment="CENTER">
                <children>
-                  <Label layoutX="324.0" layoutY="8.0" />
-                  <Label fx:id="randevuisimtext" layoutX="355.0" layoutY="2.0" prefHeight="15.0" prefWidth="67.0" text="Yusuf Yeter" AnchorPane.rightAnchor="70.0" />
-                  <Label layoutX="346.0" layoutY="21.0" text="HOŞ GELDİNİZ" AnchorPane.rightAnchor="60.0" />
-                  <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="358.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="358.0" AnchorPane.rightAnchor="152.0" AnchorPane.topAnchor="0.0">
-                     <image>
-                        <Image url="@../../../../../Downloads/kişiikonu-removebg-preview.png" />
-                     </image>
-                  </ImageView>
-                  <Text layoutX="84.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BERBERİM" wrappingWidth="77.03515625" AnchorPane.leftAnchor="84.0" AnchorPane.topAnchor="8.0">
-                     <font>
-                        <Font name="Apple Chancery" size="13.0" />
-                     </font>
-                     <effect>
-                        <ColorAdjust />
-                     </effect>
-                  </Text>
-                  <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
-                     <image>
-                        <Image url="@../../../../PROJE%20RESİMLERİ/ikon3-removebg-preview.png" />
-                     </image>
-                     <effect>
-                        <ColorAdjust />
-                     </effect>
-                  </ImageView>
-                  <MenuButton layoutX="492.0" layoutY="3.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="40.0">
-                     <items>
-                        <MenuItem fx:id="profilim" mnemonicParsing="false" onAction="#profilimclick" text="Profilim">
-                           <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <AnchorPane layoutX="23.0" layoutY="27.0" prefHeight="294.0" prefWidth="551.0" style="-fx-background-color: white;" styleClass="arkaPlan" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="20.0">
+                     <children>
+                        <AnchorPane layoutX="21.0" layoutY="12.0" prefHeight="30.0" prefWidth="502.0" styleClass="ustPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label layoutX="324.0" layoutY="8.0" />
+                              <Label fx:id="randevuisimtext" layoutX="355.0" layoutY="2.0" prefHeight="15.0" prefWidth="67.0" text="Yusuf Yeter" AnchorPane.rightAnchor="70.0" />
+                              <Label layoutX="346.0" layoutY="21.0" text="HOŞ GELDİNİZ" AnchorPane.rightAnchor="60.0" />
+                              <ImageView fitHeight="42.0" fitWidth="40.0" layoutX="358.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="358.0" AnchorPane.rightAnchor="152.0" AnchorPane.topAnchor="0.0">
                                  <image>
-                                    <Image url="@../../../../PROJE%20RESİMLERİ/kişiikonu-removebg-preview.png" />
+                                    <Image url="@../../../../../Downloads/kişiikonu-removebg-preview.png" />
                                  </image>
                               </ImageView>
-                           </graphic>
-                        </MenuItem>
-                        <MenuItem fx:id="randevularim" mnemonicParsing="false" onAction="#randevularimclick" text="Randevularım">
-                           <graphic>
-                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <Text layoutX="84.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BERBERİM" wrappingWidth="77.03515625" AnchorPane.leftAnchor="84.0" AnchorPane.topAnchor="8.0">
+                                 <font>
+                                    <Font name="Apple Chancery" size="13.0" />
+                                 </font>
+                                 <effect>
+                                    <ColorAdjust />
+                                 </effect>
+                              </Text>
+                              <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
                                  <image>
-                                    <Image url="@../../../../../Downloads/randevuikonu-removebg-preview.png" />
+                                    <Image url="@../../../../PROJE%20RESİMLERİ/ikon3-removebg-preview.png" />
+                                 </image>
+                                 <effect>
+                                    <ColorAdjust />
+                                 </effect>
+                              </ImageView>
+                              <MenuButton layoutX="492.0" layoutY="3.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="40.0">
+                                 <items>
+                                    <MenuItem fx:id="profilim" mnemonicParsing="false" onAction="#profilimclick" text="Profilim">
+                                       <graphic>
+                                          <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../PROJE%20RESİMLERİ/kişiikonu-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </MenuItem>
+                                    <MenuItem fx:id="randevularim" mnemonicParsing="false" onAction="#randevularimclick" text="Randevularım">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Downloads/randevuikonu-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </MenuItem>
+                                    <MenuItem fx:id="cikisyap" mnemonicParsing="false" onAction="#cikisyapclick" text="Çıkış Yap">
+                                       <graphic>
+                                          <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../../Downloads/çıkışikonu-removebg-preview.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </MenuItem>
+                                 </items>
+                                 <styleClass>
+                                    <String fx:value="arrow-button" />
+                                    <String fx:value="arrow" />
+                                    <String fx:value="menu-button" />
+                                 </styleClass>
+                              </MenuButton>
+                              <ImageView fx:id="geributon" fitHeight="43.0" fitWidth="37.0" layoutX="15.0" layoutY="1.0" onMouseClicked="#geributonclick" pickOnBounds="true" preserveRatio="true" styleClass="back-btn-style" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="498.0" AnchorPane.topAnchor="1.0">
+                                 <image>
+                                    <Image url="@../../../../../Downloads/geriçıkışbuton-removebg-preview.png" />
                                  </image>
                               </ImageView>
-                           </graphic>
-                        </MenuItem>
-                        <MenuItem fx:id="cikisyap" mnemonicParsing="false" onAction="#cikisyapclick" text="Çıkış Yap">
-                           <graphic>
-                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../../../Downloads/çıkışikonu-removebg-preview.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </MenuItem>
-                     </items>
-                     <styleClass>
-                        <String fx:value="arrow-button" />
-                        <String fx:value="arrow" />
-                        <String fx:value="menu-button" />
-                     </styleClass>
-                  </MenuButton>
-                  <ImageView fx:id="geributon" fitHeight="43.0" fitWidth="37.0" layoutX="15.0" layoutY="1.0" onMouseClicked="#geributonclick" pickOnBounds="true" preserveRatio="true" styleClass="back-btn-style" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="498.0" AnchorPane.topAnchor="1.0">
-                     <image>
-                        <Image url="@../../../../../Downloads/geriçıkışbuton-removebg-preview.png" />
-                     </image>
-                  </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <ScrollPane fitToWidth="true" layoutX="15.0" layoutY="72.0" prefHeight="214.0" prefWidth="520.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="75.0">
+                           <content>
+                              <VBox prefHeight="213.0" prefWidth="504.0" spacing="5.0">
+                                 <children>
+                                    <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-seridi">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="16.0" prefWidth="100.0" styleClass="liste-baslik" text="Tarih">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="16.0" prefWidth="100.0" styleClass="liste-baslik" text="Saat">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="16.0" prefWidth="100.0" styleClass="liste-baslik" text="Hizmet">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="16.0" prefWidth="100.0" styleClass="liste-baslik" text="Personel">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
+                                       <children>
+                                          <Label fx:id="lblTarih" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblSaat" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblHizmet" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblPersonel" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="personel">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Button alignment="CENTER" mnemonicParsing="false" onAction="#btnSil1" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
+                                       <children>
+                                          <Label fx:id="lblTarih1" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblSaat1" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblHizmet1" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblPersonel1" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="personel">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Button mnemonicParsing="false" onAction="#btnSil2" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
+                                       <children>
+                                          <Label fx:id="lblTarih2" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblSaat2" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblHizmet2" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblPersonel2" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="personel">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Button mnemonicParsing="false" onAction="#btnSil3" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
+                                       <children>
+                                          <Label fx:id="lblTarih3" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblSaat3" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblHizmet3" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblPersonel3" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="personel">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Button mnemonicParsing="false" onAction="#btnSil4" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
+                                       <children>
+                                          <Label fx:id="lblTarih4" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblSaat4" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblHizmet4" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblPersonel4" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="personel">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Button mnemonicParsing="false" onAction="#btnSil5" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
+                                       <children>
+                                          <Label fx:id="lblTarih5" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblSaat5" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblHizmet5" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblPersonel5" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="personel">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Button mnemonicParsing="false" onAction="#btnSil6" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                        <Label layoutX="15.0" layoutY="42.0" styleClass="randevu-baslik" text="Randevularım">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
-            <ScrollPane fitToWidth="true" layoutX="15.0" layoutY="72.0" prefHeight="214.0" prefWidth="520.0" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="75.0">
-               <content>
-                  <VBox prefHeight="213.0" prefWidth="504.0" spacing="5.0">
-                     <children>
-                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-seridi">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="100.0" styleClass="liste-baslik" text="Tarih">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font></Label>
-                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="100.0" styleClass="liste-baslik" text="Saat">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="100.0" styleClass="liste-baslik" text="Hizmet">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="100.0" styleClass="liste-baslik" text="Personel">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
-                           <children>
-                              <Label fx:id="lblTarih" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblSaat" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblHizmet" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblPersonel" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="personel">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#btnSil1" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font></Button>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
-                           <children>
-                              <Label fx:id="lblTarih1" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblSaat1" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblHizmet1" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblPersonel1" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="personel">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Button mnemonicParsing="false" onAction="#btnSil2" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font></Button>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
-                           <children>
-                              <Label fx:id="lblTarih2" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblSaat2" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblHizmet2" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblPersonel2" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="personel">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Button mnemonicParsing="false" onAction="#btnSil3" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font></Button>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
-                           <children>
-                              <Label fx:id="lblTarih3" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblSaat3" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblHizmet3" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblPersonel3" alignment="CENTER" prefHeight="16.0" prefWidth="100.0" text="personel">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Button mnemonicParsing="false" onAction="#btnSil4" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font></Button>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
-                           <children>
-                              <Label fx:id="lblTarih4" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblSaat4" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblHizmet4" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblPersonel4" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="personel">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Button mnemonicParsing="false" onAction="#btnSil5" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font></Button>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="25.0" prefWidth="518.0" spacing="5.0" styleClass="liste-baslik">
-                           <children>
-                              <Label fx:id="lblTarih5" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="Tarih">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblSaat5" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="saat">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblHizmet5" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="hizmet">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lblPersonel5" alignment="CENTER" prefHeight="16.0" prefWidth="105.0" text="personel">
-                                 <font>
-                                    <Font size="15.0" />
-                                 </font>
-                              </Label>
-                              <Button mnemonicParsing="false" onAction="#btnSil6" prefHeight="24.0" prefWidth="83.0" styleClass="btn-sil" text="Sil">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font></Button>
-                           </children>
-                        </HBox>
-                     </children>
-                     <padding>
-                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-                     </padding>
-                  </VBox>
-               </content>
-            </ScrollPane>
-            <Label layoutX="15.0" layoutY="42.0" styleClass="randevu-baslik" text="Randevularım">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
          </children>
-      </AnchorPane>
+      </StackPane>
    </children>
 </AnchorPane>
