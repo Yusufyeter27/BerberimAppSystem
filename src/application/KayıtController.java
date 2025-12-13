@@ -27,7 +27,17 @@ public class KayıtController {
         String soyad = soyadTextField.getText();
         String kullaniciAdi = kullanıcı2TextField.getText();
         String sifre = şifre2TextField.getText();
+      
+        String isimRegex = "^[a-zA-ZçÇğĞıİöÖşŞüÜ ]+$";
+        if (!ad.matches(isimRegex) || ad.trim().isEmpty()) {
+            System.out.println("HATA: Ad sadece harf ve boşluk içerebilir!");
+            return;
+        }
 
+        if (!soyad.matches(isimRegex) || soyad.trim().isEmpty()) {
+            System.out.println("HATA: Soyad sadece harf ve boşluk içerebilir!");
+            return;
+        }
         if (ad.isBlank() || soyad.isBlank() || kullaniciAdi.isBlank() || sifre.isBlank()) {
             System.out.println("Tüm alanlar zorunludur.");
             return;
@@ -54,5 +64,4 @@ public class KayıtController {
             System.out.println("HATA: Login ekranı yüklenemedi!");
         }
     }
-
 }

@@ -39,36 +39,57 @@ public class BilgiGuncelleController {
     private String eskiAd;
     private String eskiSoyad;
 
-    // Profilim’den gelen ad+soyadı alıp textfield’ları doldurur
     public void setKullaniciAdi(String adSoyad) {
         randevuisimtext.setText(adSoyad);
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("kullanicilar.txt"))) {
-            String satir;
-            while ((satir = reader.readLine()) != null) {
-                String[] parcalar = satir.split(",");
-                if (parcalar.length >= 4) {
-                    String ad = parcalar[0];
-                    String soyad = parcalar[1];
-                    String kullaniciAdi = parcalar[2];
-                    String sifre = parcalar[3];
+        // Baştaki ve sondaki boşlukları temizle
+        adSoyad = adSoyad.trim();
 
-                    if ((ad + " " + soyad).equals(adSoyad)) {
-                        adguncelle.setText(ad);
-                        soyadguncelle.setText(soyad);
-                        kullaniciguncelle.setText(kullaniciAdi);
-                        sifreguncelle.setText(sifre);
-                        sifreguncelle2.setText(sifre);
+        // Boşluklardan böl
+        String[] parts = adSoyad.split("\\s+");
 
-                        eskiKullaniciAdi = kullaniciAdi;
-                        eskiAd = ad;
-                        eskiSoyad = soyad;
-                        break;
+        if (parts.length >= 2) {
+
+            // Soyad = son kelime
+            String soyad = parts[parts.length - 1];
+
+            // Ad = geri kalan tüm kelimeler
+            StringBuilder adBuilder = new StringBuilder();
+            for (int i = 0; i < parts.length - 1; i++) {
+                adBuilder.append(parts[i]).append(" ");
+            }
+            String ad = adBuilder.toString().trim();
+
+            try (BufferedReader reader = new BufferedReader(new FileReader("kullanicilar.txt"))) {
+                String satir;
+                while ((satir = reader.readLine()) != null) {
+                    String[] parcalar = satir.split(",");
+                    if (parcalar.length >= 4) {
+                        String kayitAd = parcalar[0];
+                        String kayitSoyad = parcalar[1];
+                        String kullaniciAdi = parcalar[2];
+                        String sifre = parcalar[3];
+
+                        // Çoklu isim uyumlu karşılaştırma
+                        if (kayitAd.equalsIgnoreCase(ad) && kayitSoyad.equalsIgnoreCase(soyad)) {
+
+                            adguncelle.setText(kayitAd);
+                            soyadguncelle.setText(kayitSoyad);
+                            kullaniciguncelle.setText(kullaniciAdi);
+                            sifreguncelle.setText(sifre);
+                            sifreguncelle2.setText(sifre);
+
+                            eskiKullaniciAdi = kullaniciAdi;
+                            eskiAd = kayitAd;
+                            eskiSoyad = kayitSoyad;
+
+                            break;
+                        }
                     }
                 }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 

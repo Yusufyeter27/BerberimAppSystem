@@ -23,7 +23,8 @@ import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.time.format.DateTimeFormatter;
-
+import java.io.BufferedReader;
+import java.io.FileReader;
 public class RandevuController {
 
     @FXML private ResourceBundle resources;
@@ -79,7 +80,30 @@ public class RandevuController {
             e.printStackTrace();
         }
     }
+    private boolean randevuVarMi(String personel, String tarih, String saat) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("randevular.txt"))) {
+            String satir;
+            while ((satir = reader.readLine()) != null) {
+                String[] p = satir.split(",");
+                if (p.length == 5) {
+                    String kayitliTarih = p[1];
+                    String kayitliSaat = p[2];
+                    String kayitliHizmet = p[3];
+                    String kayitliPersonel = p[4];
 
+                    // Personel + Tarih + Saat tamamen aynıysa randevu çakışması var
+                    if (kayitliPersonel.equals(personel) &&
+                        kayitliTarih.equals(tarih) &&
+                        kayitliSaat.equals(saat)) {
+                        return true;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
     @FXML
     void randevuonaylabutonclick(ActionEvent event) {
         try {
@@ -97,6 +121,13 @@ public class RandevuController {
                 System.out.println("HATA: Tarih seçilmedi!");
                 return;
             }
+
+            // GEÇMİŞ TARİH ENGELİ
+            if (secilenTarih.isBefore(LocalDate.now())) {
+                System.out.println("HATA: Geçmiş tarihe randevu alınamaz!");
+                return;
+            }
+
             String tarihStr = secilenTarih.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
             // SAAT KONTROLÜ
@@ -109,10 +140,16 @@ public class RandevuController {
             // HİZMET ADI
             String hizmetAdi = RandevuIsmi.getText();
 
+            // AYNI PERSONEL AYNI TARİH AYNI SAAT KONTROLÜ
+            if (randevuVarMi(personelAdi, tarihStr, saatStr)) {
+                System.out.println("HATA: Bu personelin bu tarih ve saatte zaten randevusu var!");
+                return;
+            }
+
             // RANDEVUYU KAYDET
             kaydetRandevu(randevuisimtext.getText(), hizmetAdi, personelAdi, tarihStr, saatStr);
 
-            // ANA SAYFAYA DÖN
+            // ANA SAYFAYA DÖNÜŞ
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/AnaSayfa.fxml"));
             Parent root = loader.load();
 
@@ -127,7 +164,6 @@ public class RandevuController {
             e.printStackTrace();
         }
     }
-
     private void kaydetRandevu(String kullaniciAdi, String hizmet, String personel, String tarih, String saat) {
         try {
             File file = new File("randevular.txt");

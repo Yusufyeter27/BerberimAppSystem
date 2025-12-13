@@ -38,9 +38,7 @@ public class Berber2Controller {
     @FXML private MenuItem randevularim;
     @FXML private DatePicker takvim;
 
-    // =====================================================
-    // LABEL TEMİZLEYİCİ
-    // =====================================================
+   
     private void clearLabels() {
         Label[] musteriArr = {labelmusteri, labelmusteri1, labelmusteri2, labelmusteri3, labelmusteri4, labelmusteri5};
         Label[] tarihArr   = {labeltarih, labeltarih1, labeltarih2, labeltarih3, labeltarih4, labeltarih5};

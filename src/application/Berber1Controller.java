@@ -40,9 +40,6 @@ public class Berber1Controller {
     @FXML private DatePicker takvim;
 
     
-    // ==========================================
-    //               LABEL TEMİZLEME
-    // ==========================================
     private void clearLabels() {
 
         Label[] m = {labelmusteri, labelmusteri1, labelmusteri2, labelmusteri3, labelmusteri4};
@@ -58,9 +55,7 @@ public class Berber1Controller {
         }
     }
 
-    // ==========================================
-    //     TÜM RANDEVULARI ÇEK (Yusuf Yeter)
-    // ==========================================
+
     private void loadRandevu() {
 
         clearLabels();
@@ -128,9 +123,7 @@ public class Berber1Controller {
         }
     }
 
-    // ==========================================
-    //          ARAMA BUTONU (2 MODLU)
-    // ==========================================
+
     @FXML
     void arabutonclick(ActionEvent event) {
 
@@ -175,9 +168,7 @@ public class Berber1Controller {
     }
 
 
-    // ==========================================
-    //                MENÜ BUTONLARI
-    // ==========================================
+  
     @FXML
     void cikisyapclick(ActionEvent event) {
         try {
@@ -218,9 +209,6 @@ public class Berber1Controller {
     @FXML
     void randevularimclick(ActionEvent event) {}
 
-    // ==========================================
-    //                INITIALIZE
-    // ==========================================
     @FXML
     void initialize() {
         clearLabels();

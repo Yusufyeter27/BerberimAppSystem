@@ -52,14 +52,29 @@ public class ProfilimController {
 
     public void setKullaniciAdi(String adSoyad) {
         randevuisimtext.setText(adSoyad);
+
         KullaniciDepolama depolama = new KullaniciDepolama();
         depolama.dosyadanOku();
-        String[] parts = adSoyad.split(" ");
-        if (parts.length >= 2) {
-            String ad = parts[0].trim();
-            String soyad = parts[1].trim();
 
-            Kullanici gecici = depolama.getBas(); // liste başı
+        // Baştaki ve sondaki boşlukları temizle
+        adSoyad = adSoyad.trim();
+
+        // Boşluklardan böl
+        String[] parts = adSoyad.split("\\s+");
+
+        if (parts.length >= 2) {
+            // Soyad = son kelime
+            String soyad = parts[parts.length - 1];
+
+            // Ad = geri kalan tüm kelimeler
+            StringBuilder adBuilder = new StringBuilder();
+            for (int i = 0; i < parts.length - 1; i++) {
+                adBuilder.append(parts[i]).append(" ");
+            }
+            String ad = adBuilder.toString().trim();
+
+            // Kullanıcıyı listeden bul
+            Kullanici gecici = depolama.getBas();
             while (gecici != null) {
                 if (gecici.ad.equalsIgnoreCase(ad) && gecici.soyad.equalsIgnoreCase(soyad)) {
                     profilimisim.setText(gecici.ad);
