@@ -39,7 +39,7 @@ public class BerberBilgiGuncelleController {
     private String eskiAd;
     private String eskiSoyad;
 
-    // Profilim’den gelen ad+soyadı alıp textfield’ları doldurur
+    
     public void setKullaniciAdi(String adSoyad) {
         randevuisimtext.setText(adSoyad);
 
@@ -162,9 +162,10 @@ public class BerberBilgiGuncelleController {
     @FXML
     void profilimclick(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Profilim.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/BerberProfilim.fxml"));
             Parent root = loader.load();
-            ProfilimController profilimController = loader.getController();
+            // **DÜZELTME: ProfilimController -> BerberProfilimController**
+            BerberProfilimController profilimController = loader.getController();
             String yeniAdSoyad = adguncelle.getText() + " " + soyadguncelle.getText();
             profilimController.setKullaniciAdi(yeniAdSoyad);
             Stage stage = (Stage) randevuisimtext.getScene().getWindow();
@@ -173,11 +174,11 @@ public class BerberBilgiGuncelleController {
             System.out.println("Profilim menüsüne basıldı, Profilim.fxml'e dönüldü.");
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("HATA: Profilim.fxml yüklenemedi.");
+            System.out.println("HATA: BerberProfilim.fxml yüklenemedi.");
         }
     }
 
-   
+
 
     @FXML
     void cikisyapclick(ActionEvent event) {
@@ -197,9 +198,10 @@ public class BerberBilgiGuncelleController {
     @FXML
     void geributonclick(MouseEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Profilim.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/BerberProfilim.fxml"));
             Parent root = loader.load();
-            ProfilimController profilimController = loader.getController();
+            // **DÜZELTME: ProfilimController -> BerberProfilimController**
+            BerberProfilimController profilimController = loader.getController();
             String yeniAdSoyad = adguncelle.getText() + " " + soyadguncelle.getText();
             profilimController.setKullaniciAdi(yeniAdSoyad);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -208,7 +210,7 @@ public class BerberBilgiGuncelleController {
             System.out.println("Geri butonuna basıldı, Profilim.fxml'e dönüldü.");
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("HATA: Profilim.fxml yüklenemedi.");
+            System.out.println("HATA: BerberProfilim.fxml yüklenemedi.");
         }
     }
 }

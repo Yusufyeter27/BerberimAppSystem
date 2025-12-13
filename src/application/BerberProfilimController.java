@@ -11,44 +11,54 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 public class BerberProfilimController {
+    @FXML private ResourceBundle resources;
+    @FXML private URL location;
 
-    @FXML
-    private ResourceBundle resources;
+    @FXML private Button berberbilgilerim;
+    @FXML private Label berberprofilimisim;
+    @FXML private Label berberprofilimkullanici;
+    @FXML private Label berberprofilimsoyad;
+    @FXML private MenuItem cikisyap;
+    @FXML private ImageView geributon;
+    @FXML private MenuItem profilim;
+    @FXML private Label randevuisimtext;
+    @FXML private MenuItem randevularim;
 
-    @FXML
-    private URL location;
-
-    @FXML
-    private Button berberbilgilerim;
-
-    @FXML
-    private Label berberprofilimisim;
-
-    @FXML
-    private Label berberprofilimkullanici;
-
-    @FXML
-    private Label berberprofilimsoyad;
-
-    @FXML
-    private MenuItem cikisyap;
-
-    @FXML
-    private ImageView geributon;
-
-    @FXML
-    private MenuItem profilim;
-
-    @FXML
-    private Label randevuisimtext;
-
-    @FXML
-    private MenuItem randevularim;
+    // Bu metot zaten vardı; olduğu gibi bırakıldı
+    public void setKullaniciAdi(String adSoyad) {
+        randevuisimtext.setText(adSoyad);
+    }
 
     @FXML
     void berberbilgilerimclick(ActionEvent event) {
+        try {
+            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(
+                    getClass().getResource("/application/BerberBilgiGuncelle.fxml")
+            );
 
+            javafx.scene.Parent root = loader.load();
+
+            // **Eklendi:** yükleme sonrası BerberBilgiGuncelleController'ın setKullaniciAdi'sini çağır (isim aktarımı)
+            try {
+                BerberBilgiGuncelleController ctrl = loader.getController();
+                if (ctrl != null) {
+                    String mevcut = (berberprofilimisim.getText() + " " + berberprofilimsoyad.getText()).trim();
+                    if (!mevcut.isEmpty()) ctrl.setKullaniciAdi(mevcut);
+                }
+            } catch (Exception ex) {
+                // controller alınamazsa görmezden gel (eski davranışa zarar verme)
+            }
+
+            javafx.stage.Stage stage = (javafx.stage.Stage) berberbilgilerim.getScene().getWindow();
+            stage.setScene(new javafx.scene.Scene(root));
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("BerberBilgiGuncelle ekranına geçerken hata oluştu.");
+        }
     }
+
     @FXML
     void profilimclick(ActionEvent event) {
         try {
@@ -77,9 +87,6 @@ public class BerberProfilimController {
         }
     }
 
-
-    
-
     @FXML
     void geributonclick(MouseEvent event) {
         try {
@@ -93,7 +100,6 @@ public class BerberProfilimController {
             System.out.println("Geri giderken hata oluştu.");
         }
     }
-
 
     @FXML
     void randevularimclick(ActionEvent event) {

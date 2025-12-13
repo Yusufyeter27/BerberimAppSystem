@@ -16,196 +16,195 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 import java.io.IOException;
+import java.io.File;
+import java.util.Scanner;
 
 public class Berber3Controller {
 
-    @FXML
-    private ResourceBundle resources;
+    @FXML private ResourceBundle resources;
+    @FXML private URL location;
 
-    @FXML
-    private URL location;
+    @FXML private Button arabuton;
+    @FXML private Label berber3isimtext;
 
-    @FXML
-    private Button arabuton;
+    @FXML private Label labelhizmet, labelhizmet1, labelhizmet2, labelhizmet3, labelhizmet4, labelhizmet5;
+    @FXML private Label labelmusteri, labelmusteri1, labelmusteri2, labelmusteri3, labelmusteri4, labelmusteri5;
+    @FXML private Label labelsaat, labelsaat1, labelsaat2, labelsaat3, labelsaat4, labelsaat5;
+    @FXML private Label labeltarih, labeltarih1, labeltarih2, labeltarih3, labeltarih4, labeltarih5;
 
-    @FXML
-    private Label berber3isimtext;
+    @FXML private MenuItem cikisyap;
+    @FXML private ImageView geributon;
+    @FXML private MenuItem profilim;
+    @FXML private MenuItem randevularim;
+    @FXML private DatePicker takvim;
 
-    @FXML
-    private Label labelhizmet;
 
-    @FXML
-    private Label labelhizmet1;
+    // =====================================================
+    //                   LABEL TEMİZLEME
+    // =====================================================
+    private void clearLabels() {
+        Label[] musteriArr = {labelmusteri, labelmusteri1, labelmusteri2, labelmusteri3, labelmusteri4, labelmusteri5};
+        Label[] tarihArr   = {labeltarih, labeltarih1, labeltarih2, labeltarih3, labeltarih4, labeltarih5};
+        Label[] saatArr    = {labelsaat, labelsaat1, labelsaat2, labelsaat3, labelsaat4, labelsaat5};
+        Label[] hizmetArr  = {labelhizmet, labelhizmet1, labelhizmet2, labelhizmet3, labelhizmet4, labelhizmet5};
 
-    @FXML
-    private Label labelhizmet2;
+        for (int i = 0; i < 6; i++) {
+            musteriArr[i].setText("");
+            tarihArr[i].setText("");
+            saatArr[i].setText("");
+            hizmetArr[i].setText("");
+        }
+    }
 
-    @FXML
-    private Label labelhizmet3;
+    // =====================================================
+    //                 TÜM RANDEVULARI ÇEKME
+    // =====================================================
+    private void loadRandevu() {
 
-    @FXML
-    private Label labelhizmet4;
+        File file = new File("randevular.txt");
 
-    @FXML
-    private Label labelhizmet5;
+        try (Scanner scan = new Scanner(file)) {
 
-    @FXML
-    private Label labelmusteri;
+            int index = 0;
 
-    @FXML
-    private Label labelmusteri1;
+            while (scan.hasNextLine() && index < 6) {
 
-    @FXML
-    private Label labelmusteri2;
+                String line = scan.nextLine();
+                String[] data = line.split(",");
 
-    @FXML
-    private Label labelmusteri3;
+                if (data.length < 5) continue;
 
-    @FXML
-    private Label labelmusteri4;
+                String musteri = data[0];
+                String tarih = data[1];
+                String saat = data[2];
+                String hizmet = data[3];
+                String berber = data[4];
 
-    @FXML
-    private Label labelmusteri5;
+                if (!berber.equals("Kadir Atan")) continue;
 
-    @FXML
-    private Label labelsaat;
+                switch (index) {
+                    case 0 -> { labelmusteri.setText(musteri); labeltarih.setText(tarih); labelsaat.setText(saat); labelhizmet.setText(hizmet); }
+                    case 1 -> { labelmusteri1.setText(musteri); labeltarih1.setText(tarih); labelsaat1.setText(saat); labelhizmet1.setText(hizmet); }
+                    case 2 -> { labelmusteri2.setText(musteri); labeltarih2.setText(tarih); labelsaat2.setText(saat); labelhizmet2.setText(hizmet); }
+                    case 3 -> { labelmusteri3.setText(musteri); labeltarih3.setText(tarih); labelsaat3.setText(saat); labelhizmet3.setText(hizmet); }
+                    case 4 -> { labelmusteri4.setText(musteri); labeltarih4.setText(tarih); labelsaat4.setText(saat); labelhizmet4.setText(hizmet); }
+                    case 5 -> { labelmusteri5.setText(musteri); labeltarih5.setText(tarih); labelsaat5.setText(saat); labelhizmet5.setText(hizmet); }
+                }
 
-    @FXML
-    private Label labelsaat1;
+                index++;
+            }
 
-    @FXML
-    private Label labelsaat2;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-    @FXML
-    private Label labelsaat3;
-
-    @FXML
-    private Label labelsaat4;
-
-    @FXML
-    private Label labelsaat5;
-
-    @FXML
-    private Label labeltarih;
-
-    @FXML
-    private Label labeltarih1;
-
-    @FXML
-    private Label labeltarih2;
-
-    @FXML
-    private Label labeltarih3;
-
-    @FXML
-    private Label labeltarih4;
-
-    @FXML
-    private Label labeltarih5;
-
-    @FXML
-    private MenuItem cikisyap;
-
-    @FXML
-    private ImageView geributon;
-
-    @FXML
-    private MenuItem profilim;
-
-    @FXML
-    private MenuItem randevularim;
-
-    @FXML
-    private DatePicker takvim;
-
+    // =====================================================
+    //                 *** ARAMA BUTONU ***
+    // =====================================================
     @FXML
     void arabutonclick(ActionEvent event) {
-        // Arama işlevi buraya gelecek
+
+        clearLabels();
+
+        // ❗ Tarih seçili değilse → tüm randevuları getir
+        if (takvim.getValue() == null) {
+            loadRandevu();
+            return;
+        }
+
+        String arananTarih = takvim.getValue().toString();
+
+        File file = new File("randevular.txt");
+
+        try (Scanner scan = new Scanner(file)) {
+
+            int index = 0;
+
+            // ❗ HATA DÜZELTİLDİ → 6 olacak
+            while (scan.hasNextLine() && index < 6) {
+
+                String line = scan.nextLine();
+                String[] data = line.split(",");
+
+                if (data.length < 5) continue;
+
+                String musteri = data[0];
+                String tarih = data[1];
+                String saat = data[2];
+                String hizmet = data[3];
+                String berber = data[4];
+
+                if (!tarih.equals(arananTarih)) continue;
+                if (!berber.equals("Kadir Atan")) continue;
+
+                switch (index) {
+                    case 0 -> { labelmusteri.setText(musteri); labeltarih.setText(tarih); labelsaat.setText(saat); labelhizmet.setText(hizmet); }
+                    case 1 -> { labelmusteri1.setText(musteri); labeltarih1.setText(tarih); labelsaat1.setText(saat); labelhizmet1.setText(hizmet); }
+                    case 2 -> { labelmusteri2.setText(musteri); labeltarih2.setText(tarih); labelsaat2.setText(saat); labelhizmet2.setText(hizmet); }
+                    case 3 -> { labelmusteri3.setText(musteri); labeltarih3.setText(tarih); labelsaat3.setText(saat); labelhizmet3.setText(hizmet); }
+                    case 4 -> { labelmusteri4.setText(musteri); labeltarih4.setText(tarih); labelsaat4.setText(saat); labelhizmet4.setText(hizmet); }
+                    case 5 -> { labelmusteri5.setText(musteri); labeltarih5.setText(tarih); labelsaat5.setText(saat); labelhizmet5.setText(hizmet); }
+                }
+
+                index++;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+    // =====================================================
+    //                      MENÜLER
+    // =====================================================
 
     @FXML
     void cikisyapclick(ActionEvent event) {
-        // Çıkış Yap -> Login.fxml
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Login.fxml"));
             Parent root = loader.load();
-
-            // MenuItem'ın ait olduğu pencereyi (Stage) bul
-            Stage stage = (Stage) ((MenuItem)event.getSource())
-                    .getParentPopup().getOwnerWindow();
-
-            // Sahneyi değiştir
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            Stage stage = (Stage) cikisyap.getParentPopup().getOwnerWindow();
+            stage.setScene(new Scene(root));
             stage.show();
-            
-            System.out.println("Başarıyla çıkış yapıldı ve Login ekranına yönlendirildi.");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("HATA: Login ekranına geçiş yapılamadı: " + e.getMessage());
-        }
+        } catch (IOException e) { e.printStackTrace(); }
     }
 
     @FXML
     void geributonclick(MouseEvent event) {
-        // Geri Butonu -> BarberRandevu.fxml
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/BarberRandevu.fxml"));
             Parent root = loader.load();
-
-            // Mevcut pencereyi (Stage) butondan (Node) yola çıkarak bul
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            // Sahneyi değiştir
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            stage.setScene(new Scene(root));
             stage.show();
-            
-            System.out.println("Geri butonuna tıklandı ve BarberRandevu ekranına yönlendirildi.");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("HATA: BarberRandevu.fxml yüklenemedi: " + e.getMessage());
-        }
+        } catch (IOException e) { e.printStackTrace(); }
     }
 
     @FXML
     void profilimclick(ActionEvent event) {
         try {
-        	FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/BerberProfilim.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/BerberProfilim.fxml"));
             Parent root = loader.load();
-
-            Stage stage = (Stage) ((MenuItem) event.getSource())
-                    .getParentPopup().getOwnerWindow();
-
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
+            Stage stage = (Stage) profilim.getParentPopup().getOwnerWindow();
+            stage.setScene(new Scene(root));
             stage.show();
-
-            System.out.println("Profilim sayfasına geçildi.");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.err.println("HATA: BerberProfilimController.fxml yüklenemedi: " + e.getMessage());
-        }
+        } catch (IOException e) { e.printStackTrace(); }
     }
 
     @FXML
-    void randevularimclick(ActionEvent event) {
-        // Randevularım işlevi buraya gelecek
-    }
+    void randevularimclick(ActionEvent event) {}
 
     @FXML
     void initialize() {
-        assert arabuton != null : "fx:id=\"arabuton\" was not injected: check your FXML file 'Berber3.fxml'.";
-        assert berber3isimtext != null : "fx:id=\"berber3isimtext\" was not injected: check your FXML file 'Berber3.fxml'.";
-        assert cikisyap != null : "fx:id=\"cikisyap\" was not injected: check your FXML file 'Berber3.fxml'.";
-        assert geributon != null : "fx:id=\"geributon\" was not injected: check your FXML file 'Berber3.fxml'.";
-        assert profilim != null : "fx:id=\"profilim\" was not injected: check your FXML file 'Berber3.fxml'.";
-        assert randevularim != null : "fx:id=\"randevularim\" was not injected: check your FXML file 'Berber3.fxml'.";
-        assert takvim != null : "fx:id=\"takvim\" was not injected: check your FXML file 'Berber3.fxml'.";
+        clearLabels();
+        loadRandevu();
 
+        // ENTER ile arama çalışsın
+        takvim.setOnKeyPressed(event -> {
+            if (event.getCode().toString().equals("ENTER")) {
+                arabuton.fire();
+            }
+        });
     }
-
 }

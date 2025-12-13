@@ -83,24 +83,36 @@ public class RandevuController {
     @FXML
     void randevuonaylabutonclick(ActionEvent event) {
         try {
+            // PERSONEL KONTROLÜ
             RadioButton secilenPersonel = (RadioButton) personelgrup.getSelectedToggle();
-            String personelAdi = (secilenPersonel != null) ? secilenPersonel.getAccessibleText() : "Seçilmedi";
+            if (secilenPersonel == null) {
+                System.out.println("HATA: Personel seçilmedi!");
+                return;
+            }
+            String personelAdi = secilenPersonel.getAccessibleText();
 
+            // TARİH KONTROLÜ
             LocalDate secilenTarih = randevuTarihi.getValue();
-            String tarihStr = (secilenTarih != null) ? secilenTarih.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")) : "Seçilmedi";
+            if (secilenTarih == null) {
+                System.out.println("HATA: Tarih seçilmedi!");
+                return;
+            }
+            String tarihStr = secilenTarih.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
-            String saatStr = (secilenSaat != null) ? secilenSaat : "Seçilmedi";
+            // SAAT KONTROLÜ
+            if (secilenSaat == null) {
+                System.out.println("HATA: Saat seçilmedi!");
+                return;
+            }
+            String saatStr = secilenSaat;
 
-            String hizmetAdi = (RandevuIsmi != null && RandevuIsmi.getText() != null) ? RandevuIsmi.getText() : "Seçilmedi";
+            // HİZMET ADI
+            String hizmetAdi = RandevuIsmi.getText();
 
-            System.out.println("Randevu Onaylandı:");
-            System.out.println("Hizmet: " + hizmetAdi);
-            System.out.println("Personel: " + personelAdi);
-            System.out.println("Tarih: " + tarihStr);
-            System.out.println("Saat: " + saatStr);
-
+            // RANDEVUYU KAYDET
             kaydetRandevu(randevuisimtext.getText(), hizmetAdi, personelAdi, tarihStr, saatStr);
 
+            // ANA SAYFAYA DÖN
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/AnaSayfa.fxml"));
             Parent root = loader.load();
 
