@@ -24,7 +24,6 @@ public class BerberProfilimController {
     @FXML private Label randevuisimtext;
     @FXML private MenuItem randevularim;
 
-    // Bu metot zaten vardı; olduğu gibi bırakıldı
     public void setKullaniciAdi(String adSoyad) {
         randevuisimtext.setText(adSoyad);
     }
@@ -37,8 +36,6 @@ public class BerberProfilimController {
             );
 
             javafx.scene.Parent root = loader.load();
-
-            // **Eklendi:** yükleme sonrası BerberBilgiGuncelleController'ın setKullaniciAdi'sini çağır (isim aktarımı)
             try {
                 BerberBilgiGuncelleController ctrl = loader.getController();
                 if (ctrl != null) {
@@ -46,7 +43,7 @@ public class BerberProfilimController {
                     if (!mevcut.isEmpty()) ctrl.setKullaniciAdi(mevcut);
                 }
             } catch (Exception ex) {
-                // controller alınamazsa görmezden gel (eski davranışa zarar verme)
+                
             }
 
             javafx.stage.Stage stage = (javafx.stage.Stage) berberbilgilerim.getScene().getWindow();

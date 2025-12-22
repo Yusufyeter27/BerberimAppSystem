@@ -55,8 +55,6 @@ public class LoginController {
 
     @FXML
     void initialize() {
-
-        // müşteri girişini seç
         musterigirisi.setSelected(true);
         berbergirisi.setSelected(false);
 
@@ -66,7 +64,6 @@ public class LoginController {
         depo.setDosyaAdi("kullanicilar.txt");
         depo.dosyadanOku();
 
-        // SADECE BU KISIM ENTER İÇİN DOĞRU VE HATASIZ
         girisbutton.sceneProperty().addListener((obs, oldScene, newScene) -> {
             if (newScene != null) {
                 newScene.setOnKeyPressed(event -> {
@@ -125,7 +122,7 @@ public class LoginController {
                 FXMLLoader loader;
 
                 if (berberMi) {
-                    // *** DÜZELTİLEN SATIR ***
+                    
                     loader = new FXMLLoader(getClass().getResource("/application/BarberRandevu.fxml"));
                     root = loader.load();
 

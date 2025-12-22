@@ -41,19 +41,11 @@ public class BilgiGuncelleController {
 
     public void setKullaniciAdi(String adSoyad) {
         randevuisimtext.setText(adSoyad);
-
-        // Baştaki ve sondaki boşlukları temizle
         adSoyad = adSoyad.trim();
-
-        // Boşluklardan böl
         String[] parts = adSoyad.split("\\s+");
 
         if (parts.length >= 2) {
-
-            // Soyad = son kelime
             String soyad = parts[parts.length - 1];
-
-            // Ad = geri kalan tüm kelimeler
             StringBuilder adBuilder = new StringBuilder();
             for (int i = 0; i < parts.length - 1; i++) {
                 adBuilder.append(parts[i]).append(" ");
@@ -69,8 +61,6 @@ public class BilgiGuncelleController {
                         String kayitSoyad = parcalar[1];
                         String kullaniciAdi = parcalar[2];
                         String sifre = parcalar[3];
-
-                        // Çoklu isim uyumlu karşılaştırma
                         if (kayitAd.equalsIgnoreCase(ad) && kayitSoyad.equalsIgnoreCase(soyad)) {
 
                             adguncelle.setText(kayitAd);
@@ -92,15 +82,12 @@ public class BilgiGuncelleController {
             }
         }
     }
-
-    // TextField event’leri (boş bırakılabilir)
     @FXML void adguncelleclick(ActionEvent event) {}
     @FXML void soyadguncelleclick(ActionEvent event) {}
     @FXML void kullaniciguncelleclick(ActionEvent event) {}
     @FXML void sifreguncelleclick(ActionEvent event) {}
     @FXML void sifreguncelle2click(ActionEvent event) {}
 
-    // Onayla → dosya güncelleme
     @FXML
     void onaylabutonclick(ActionEvent event) {
         String yeniAd = adguncelle.getText();
@@ -109,13 +96,29 @@ public class BilgiGuncelleController {
         String yeniSifre = sifreguncelle.getText();
         String yeniSifre2 = sifreguncelle2.getText();
 
+        String isimRegex = "^[a-zA-ZçÇğĞıİöÖşŞüÜ ]+$"; // harf + boşluk
+        String kullaniciRegex = "^[a-zA-Z0-9çÇğĞıİöÖşŞüÜ]+$"; // harf + rakam
+
+        String temizAd = yeniAd.trim();
+        if (!temizAd.matches(isimRegex) || temizAd.replace(" ", "").isEmpty()) {
+            System.out.println("HATA: Ad sadece harf ve boşluk içerebilir!");
+            return;
+        }
+        String temizSoyad = yeniSoyad.trim();
+        if (!temizSoyad.matches(isimRegex) || temizSoyad.replace(" ", "").isEmpty()) {
+            System.out.println("HATA: Soyad sadece harf ve boşluk içerebilir!");
+            return;
+        }
+        if (!yeniKullaniciAdi.matches(kullaniciRegex)) {
+            System.out.println("HATA: Kullanıcı adı sadece harf ve rakamlardan oluşabilir!");
+            return;
+        }
         if (!yeniSifre.equals(yeniSifre2)) {
             System.out.println("HATA: Şifreler uyuşmuyor!");
             return;
         }
 
         try {
-            // --- kullanicilar.txt GÜNCELLE ---
             File file = new File("kullanicilar.txt");
             List<String> satirlar = new ArrayList<>();
 
@@ -139,8 +142,6 @@ public class BilgiGuncelleController {
             }
 
             System.out.println("Kullanıcı bilgileri güncellendi.");
-
-            // --- randevular.txt GÜNCELLE ---
             File randevuFile = new File("randevular.txt");
             List<String> randevuSatirlar = new ArrayList<>();
 
@@ -168,8 +169,6 @@ public class BilgiGuncelleController {
             }
 
             System.out.println("Randevular güncellendi.");
-
-            // Eski değerleri yeniyle senkronla
             eskiAd = yeniAd;
             eskiSoyad = yeniSoyad;
             eskiKullaniciAdi = yeniKullaniciAdi;
@@ -179,7 +178,6 @@ public class BilgiGuncelleController {
         }
     }
 
-    // Menü event’leri
     @FXML
     void profilimclick(ActionEvent event) {
         try {

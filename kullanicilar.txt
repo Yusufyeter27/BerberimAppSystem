@@ -1,12 +1,4 @@
-can,yeter,yinemisen,evetben
-a,aaa,aa,aaaaaaa
-      e,doğan,tahadoğan,1234567
-yusuf,yeter,kk,1234567
-yusuf,yeter,kk,1234567
-bilal,aktaş,bilo,44556677
-yy,ff,ff,fffffff
-ee ee,ee,ee,eeeeeee
-         e,       e,       eee,eeeeeee
-ali,veli,   ee,eeeeeee
-murat can,şen,muro,muratcan
-    e,    e,asd,asdasda
+yusuf,yeter,yusufcan27,yusufcan27
+kadir,atan,kadir6363,kadir6363
+emre,turgut,emreturgut,emreturgut
+

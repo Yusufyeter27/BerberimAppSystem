@@ -1,5 +1,2 @@
-can yeter,24.12.2025,18.00,Saç Tıraşı,Yusuf Yeter
-      e doğan,15.12.2025,09.00,Saç Tıraşı,Yusuf Yeter
-      e doğan,Seçilmedi,Seçilmedi,Saç Tıraşı,Seçilmedi
-      e doğan,Seçilmedi,Seçilmedi,Saç Tıraşı,Yusuf Yeter
-a aaa,13.12.2025,17.00,Saç Tıraşı,Emre Turğut
+
+yusuf yeter,22.12.2025,11.00,Saç-Sakal Kesimi,Emre Turğut

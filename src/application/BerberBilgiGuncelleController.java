@@ -94,7 +94,6 @@ public class BerberBilgiGuncelleController {
         }
 
         try {
-            // --- kullanicilar.txt GÜNCELLE ---
             File file = new File("kullanicilar.txt");
             List<String> satirlar = new ArrayList<>();
 
@@ -119,7 +118,6 @@ public class BerberBilgiGuncelleController {
 
             System.out.println("Kullanıcı bilgileri güncellendi.");
 
-            // --- randevular.txt GÜNCELLE ---
             File randevuFile = new File("randevular.txt");
             List<String> randevuSatirlar = new ArrayList<>();
 
@@ -148,7 +146,6 @@ public class BerberBilgiGuncelleController {
 
             System.out.println("Randevular güncellendi.");
 
-            // Eski değerleri yeniyle senkronla
             eskiAd = yeniAd;
             eskiSoyad = yeniSoyad;
             eskiKullaniciAdi = yeniKullaniciAdi;
@@ -164,7 +161,6 @@ public class BerberBilgiGuncelleController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/BerberProfilim.fxml"));
             Parent root = loader.load();
-            // **DÜZELTME: ProfilimController -> BerberProfilimController**
             BerberProfilimController profilimController = loader.getController();
             String yeniAdSoyad = adguncelle.getText() + " " + soyadguncelle.getText();
             profilimController.setKullaniciAdi(yeniAdSoyad);
@@ -200,7 +196,6 @@ public class BerberBilgiGuncelleController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/BerberProfilim.fxml"));
             Parent root = loader.load();
-            // **DÜZELTME: ProfilimController -> BerberProfilimController**
             BerberProfilimController profilimController = loader.getController();
             String yeniAdSoyad = adguncelle.getText() + " " + soyadguncelle.getText();
             profilimController.setKullaniciAdi(yeniAdSoyad);

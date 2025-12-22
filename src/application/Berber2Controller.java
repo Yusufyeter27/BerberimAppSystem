@@ -52,10 +52,6 @@ public class Berber2Controller {
             hizmetArr[i].setText("");
         }
     }
-
-    // =====================================================
-    // LABEL DOLDURMA FONKSİYONU
-    // =====================================================
     private void fillLabels(int index, String m, String t, String s, String h) {
         switch (index) {
             case 0 -> { labelmusteri.setText(m); labeltarih.setText(t); labelsaat.setText(s); labelhizmet.setText(h); }
@@ -66,10 +62,6 @@ public class Berber2Controller {
             case 5 -> { labelmusteri5.setText(m); labeltarih5.setText(t); labelsaat5.setText(s); labelhizmet5.setText(h); }
         }
     }
-
-    // =====================================================
-    // TÜM RANDEVULARI YÜKLE (Emre Turğut)
-    // =====================================================
     private void loadRandevu() {
 
         File file = new File("randevular.txt");
@@ -101,21 +93,16 @@ public class Berber2Controller {
         }
     }
 
-    // =====================================================
-    // ARAMA BUTONU
-    // =====================================================
     @FXML
     void arabutonclick(ActionEvent event) {
 
         clearLabels();
-
-        // Tarih seçilmemişse → tümünü getirsin
         if (takvim.getValue() == null) {
             loadRandevu();
             return;
         }
 
-        String arananTarih = takvim.getValue().toString();
+        String arananTarih = takvim.getValue().format(java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
         File file = new File("randevular.txt");
 
@@ -146,19 +133,11 @@ public class Berber2Controller {
             e.printStackTrace();
         }
     }
-
-    // =====================================================
-    // ❗ EKLENEN METOT — HATAYI KALDIRAN PARÇA
-    // =====================================================
     @FXML
     void randevularimclick(ActionEvent event) {
         // Boş olabilir, yeter ki FXML çağırdığında bulsun.
         System.out.println("randevularimclick çalıştı.");
     }
-
-    // =====================================================
-    // BUTONLAR
-    // =====================================================
     @FXML
     void cikisyapclick(ActionEvent event) {
         try {

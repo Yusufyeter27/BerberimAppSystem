@@ -38,10 +38,6 @@ public class Berber3Controller {
     @FXML private MenuItem randevularim;
     @FXML private DatePicker takvim;
 
-
-    // =====================================================
-    //                   LABEL TEMİZLEME
-    // =====================================================
     private void clearLabels() {
         Label[] musteriArr = {labelmusteri, labelmusteri1, labelmusteri2, labelmusteri3, labelmusteri4, labelmusteri5};
         Label[] tarihArr   = {labeltarih, labeltarih1, labeltarih2, labeltarih3, labeltarih4, labeltarih5};
@@ -56,9 +52,6 @@ public class Berber3Controller {
         }
     }
 
-    // =====================================================
-    //                 TÜM RANDEVULARI ÇEKME
-    // =====================================================
     private void loadRandevu() {
 
         File file = new File("randevular.txt");
@@ -99,21 +92,18 @@ public class Berber3Controller {
         }
     }
 
-    // =====================================================
-    //                 *** ARAMA BUTONU ***
-    // =====================================================
     @FXML
     void arabutonclick(ActionEvent event) {
 
         clearLabels();
 
-        // ❗ Tarih seçili değilse → tüm randevuları getir
+        
         if (takvim.getValue() == null) {
             loadRandevu();
             return;
         }
 
-        String arananTarih = takvim.getValue().toString();
+        String arananTarih = takvim.getValue().format(java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
         File file = new File("randevular.txt");
 
@@ -121,7 +111,7 @@ public class Berber3Controller {
 
             int index = 0;
 
-            // ❗ HATA DÜZELTİLDİ → 6 olacak
+           
             while (scan.hasNextLine() && index < 6) {
 
                 String line = scan.nextLine();
@@ -155,9 +145,6 @@ public class Berber3Controller {
         }
     }
 
-    // =====================================================
-    //                      MENÜLER
-    // =====================================================
 
     @FXML
     void cikisyapclick(ActionEvent event) {

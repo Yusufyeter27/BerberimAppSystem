@@ -90,8 +90,6 @@ public class RandevuController {
                     String kayitliSaat = p[2];
                     String kayitliHizmet = p[3];
                     String kayitliPersonel = p[4];
-
-                    // Personel + Tarih + Saat tamamen aynıysa randevu çakışması var
                     if (kayitliPersonel.equals(personel) &&
                         kayitliTarih.equals(tarih) &&
                         kayitliSaat.equals(saat)) {
@@ -107,49 +105,34 @@ public class RandevuController {
     @FXML
     void randevuonaylabutonclick(ActionEvent event) {
         try {
-            // PERSONEL KONTROLÜ
             RadioButton secilenPersonel = (RadioButton) personelgrup.getSelectedToggle();
             if (secilenPersonel == null) {
                 System.out.println("HATA: Personel seçilmedi!");
                 return;
             }
             String personelAdi = secilenPersonel.getAccessibleText();
-
-            // TARİH KONTROLÜ
             LocalDate secilenTarih = randevuTarihi.getValue();
             if (secilenTarih == null) {
                 System.out.println("HATA: Tarih seçilmedi!");
                 return;
             }
-
-            // GEÇMİŞ TARİH ENGELİ
             if (secilenTarih.isBefore(LocalDate.now())) {
                 System.out.println("HATA: Geçmiş tarihe randevu alınamaz!");
                 return;
             }
 
             String tarihStr = secilenTarih.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-
-            // SAAT KONTROLÜ
             if (secilenSaat == null) {
                 System.out.println("HATA: Saat seçilmedi!");
                 return;
             }
             String saatStr = secilenSaat;
-
-            // HİZMET ADI
             String hizmetAdi = RandevuIsmi.getText();
-
-            // AYNI PERSONEL AYNI TARİH AYNI SAAT KONTROLÜ
             if (randevuVarMi(personelAdi, tarihStr, saatStr)) {
                 System.out.println("HATA: Bu personelin bu tarih ve saatte zaten randevusu var!");
                 return;
             }
-
-            // RANDEVUYU KAYDET
             kaydetRandevu(randevuisimtext.getText(), hizmetAdi, personelAdi, tarihStr, saatStr);
-
-            // ANA SAYFAYA DÖNÜŞ
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/AnaSayfa.fxml"));
             Parent root = loader.load();
 

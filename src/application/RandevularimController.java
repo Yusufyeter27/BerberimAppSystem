@@ -53,7 +53,6 @@ public class RandevularimController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // Label’lara yaz
         Label[] tarihLabels = {lblTarih, lblTarih1, lblTarih2, lblTarih3, lblTarih4, lblTarih5};
         Label[] saatLabels = {lblSaat, lblSaat1, lblSaat2, lblSaat3, lblSaat4, lblSaat5};
         Label[] hizmetLabels = {lblHizmet, lblHizmet1, lblHizmet2, lblHizmet3, lblHizmet4, lblHizmet5};
@@ -155,12 +154,11 @@ public class RandevularimController {
 
     @FXML
     void randevularimclick(ActionEvent event) {
-        // Aynı sayfadayız, gerek yok ama refresh yapabiliriz
         randevulariYukle();
     }
 
     @FXML
     void initialize() {
-        // assert’ler zaten var
+ 
     }
 }

@@ -55,25 +55,16 @@ public class ProfilimController {
 
         KullaniciDepolama depolama = new KullaniciDepolama();
         depolama.dosyadanOku();
-
-        // Baştaki ve sondaki boşlukları temizle
         adSoyad = adSoyad.trim();
-
-        // Boşluklardan böl
         String[] parts = adSoyad.split("\\s+");
 
         if (parts.length >= 2) {
-            // Soyad = son kelime
             String soyad = parts[parts.length - 1];
-
-            // Ad = geri kalan tüm kelimeler
             StringBuilder adBuilder = new StringBuilder();
             for (int i = 0; i < parts.length - 1; i++) {
                 adBuilder.append(parts[i]).append(" ");
             }
             String ad = adBuilder.toString().trim();
-
-            // Kullanıcıyı listeden bul
             Kullanici gecici = depolama.getBas();
             while (gecici != null) {
                 if (gecici.ad.equalsIgnoreCase(ad) && gecici.soyad.equalsIgnoreCase(soyad)) {
@@ -92,14 +83,8 @@ public class ProfilimController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/BilgiGuncelle.fxml"));
             Parent root = loader.load();
-
-            // Controller'ı al
             BilgiGuncelleController bilgiController = loader.getController();
-
-            // Kullanıcı ad + soyad bilgisini gönder
             bilgiController.setKullaniciAdi(randevuisimtext.getText());
-
-            // Sahneyi değiştir
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();

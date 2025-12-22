@@ -39,8 +39,6 @@ public class BarberRandevuController {
             newStage.setScene(new Scene(root));
             newStage.setTitle("Giriş Yap");
             newStage.show();
-
-            // Mevcut pencereyi kapatmak için MenuItem bağlı Stage'i bul
             MenuItem source = (MenuItem) event.getSource();
             Stage currentStage = (Stage) cikisyap.getParentPopup().getOwnerWindow();
             currentStage.close();
@@ -58,12 +56,7 @@ public class BarberRandevuController {
             // FXML yükle
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/BerberProfilim.fxml"));
             Parent root = loader.load();
-
-            // Menü tuşu olduğu için Node kullanamazsın!
-            // Sahneyi bu şekilde alacaksın:
             Stage stage = (Stage) profilim.getParentPopup().getOwnerWindow();
-
-            // Sahne değiştir
             stage.setScene(new Scene(root));
             stage.show();
 
@@ -79,20 +72,14 @@ public class BarberRandevuController {
 
     @FXML
     void randevularimclick(ActionEvent event) {
-        // Randevularım tıklama işlemleri buraya
     }
 
     @FXML
     void emrebutonclick(ActionEvent event) {
         try {
-            // Berber2.fxml'i yükle
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Berber2.fxml"));
             Parent root = loader.load();
-
-            // Mevcut pencereyi (Stage) bul
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            
-            // Sahneyi değiştir
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -108,14 +95,9 @@ public class BarberRandevuController {
     @FXML
     void kadirbutonclick(ActionEvent event) {
         try {
-            // Berber3.fxml'i yükle
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Berber3.fxml"));
             Parent root = loader.load();
-
-            // Mevcut pencereyi (Stage) bul
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            
-            // Sahneyi değiştir
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -131,24 +113,16 @@ public class BarberRandevuController {
     @FXML
     void yusufbutonclick(ActionEvent event) {
         try {
-            // Berber1.fxml'i yükle (Doğru yönlendirme)
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Berber1.fxml"));
             Parent root = loader.load();
-
-            // Mevcut pencereyi (Stage) bul
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            
-            // Sahneyi değiştir
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-            
-            // Çıktıyı düzelt
             System.out.println("Yusuf butonu Berber1 sayfasına yönlendirdi."); 
 
         } catch (IOException e) {
             e.printStackTrace();
-            // Hata mesajını düzelt
             System.err.println("HATA: Berber1.fxml yüklenemedi: " + e.getMessage()); 
         }
     }

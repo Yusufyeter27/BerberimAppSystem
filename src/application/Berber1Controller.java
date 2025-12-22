@@ -87,7 +87,6 @@ public class Berber1Controller {
         }
     }
 
-    // Ortak doldurma fonksiyonu
     private void fillLabels(int index, String m, String t, String s, String h) {
         switch (index) {
             case 0 -> {
@@ -135,8 +134,7 @@ public class Berber1Controller {
             return;
         }
 
-        // Tarih seçiliyse → FİLTRELE
-        String arananTarih = takvim.getValue().toString();
+        String arananTarih = takvim.getValue().format(java.time.format.DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
         File file = new File("randevular.txt");
 
